@@ -1,0 +1,18 @@
+FILLED FRAME PROMPT
+
+Use case: precise-object-edit.
+Edit target: image 1 kitchen-v2.png, the full 1536x1024 kitchen background.
+Supporting reference only: image 2 items-v2.png. Use only its worn sage green drip coffee machine and cream paper ration pouch with the simple green ringed-planet emblem as object design references. Do not copy the sheet background or any other objects.
+Edit only two small localized areas of image 1: paint these two objects naturally INTO the original kitchen scene with exactly its existing watercolor/pencil texture, fibrous paper grain, lighting, perspective, warm dark muted colors, edge softness and detail density.
+1. A modest worn sage-green coffee machine with a small glass carafe, tucked onto the BACK LEFT counter near x30% y52%, behind the front work surface and immediately alongside the existing plant mug/tins. Approximately 8% of image width and 14% of image height, base rests at y57%. It must feel like existing everyday clutter, not an isolated prize. Soft realistic contact shadow and muted reflections.
+2. A SMALL cream paper ration pouch with green planet emblem, naturally leaning beside the rear counter jars/tins near x65% y54%. Approximately 3.5% of image width and 7.5% of height, base rests at y57%. Integrate into the existing row of back-counter clutter.
+Keep ALL original room geometry, camera position, shelf contents, counter edges, plants, sink, kettle, window, colors and composition unchanged. Preserve image dimensions 1536x1024 and full bleed. Do not move or redesign existing furniture. Objects must be painted as native parts of the scene, no pasted cutouts, no outline/highlight, no spotlight, no glow, no isolated podium or blank surrounding area. No UI, text, characters, borders or watermarks.
+
+CLEAN FRAME PROMPT
+
+Use case: precise-object-edit.
+Edit target: the provided 1536x1024 kitchen-v3 image.
+This is a highly localized object-removal edit for a hidden-object game. REMOVE ONLY these TWO specific objects and their small contact shadows:
+1. The small sage-green drip coffee machine and its glass coffee carafe at the rear-left counter, entire object approximately x28.6% to36.8%, y42.1% to57.4%. It is immediately right of the plant in a cream mug, and left of the hanging black frying pan. Remove the machine AND its carafe, restore the wall/towel detail behind it and the counter beneath it.
+2. The small cream PAPER RATION POUCH with green ringed-planet emblem, approximately x64.6% to69.1%, y47.1% to57.4%, standing in front of the bowls, next to the rectangular green metal rocket-emblem tin and the garlic bulb. Remove ONLY the cream pouch; preserve the green metal tin, ceramic bowls, garlic, onions and everything else.
+Fill the underlying surfaces and previously occluded small kitchen details naturally, using the exact same watercolor, pencil grain and lighting. Preserve all other pixels/objects, original room geometry, camera, crop, dimensions1536x1024, colors, contrast, shadows, counter edges and composition as faithfully as possible. No new objects. Do not remove the kettle, green tin, plant mug, or anything beyond these two identified targets. Output full-bleed same kitchen frame with only these two objects absent, no UI, labels, text, borders or watermarks.

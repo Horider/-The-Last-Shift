@@ -1,0 +1,3 @@
+const test=require('node:test'),assert=require('node:assert/strict'),{fit}=require('../dist/camera.js');
+test('camera fills portrait, landscape and desktop without bands while preserving image aspect',()=>{for(const [w,h]of [[390,844],[844,390],[1280,720],[360,640]]){const g=fit(w,h);assert.ok(g.width>=w&&g.height>=h);assert.ok(Math.abs(g.width/g.height-1.5)<1e-9);assert.ok(g.x<=0&&g.y<=0&&g.x+g.width>=w&&g.y+g.height>=h);}});
+test('zoom is gentle and bounded, and extreme drags cannot expose outside artwork',()=>{for(const z of [.2,1,1.08,1.16,1.22,10])for(const pan of [-1e6,1e6]){const g=fit(390,844,z,pan,pan);assert.ok(g.width>=390&&g.height>=844);assert.ok(g.x<=0&&g.y<=0);assert.ok(g.x+g.width>=390-1e-7&&g.y+g.height>=844-1e-7);assert.ok(g.height<=844*1.22+1e-7);}});

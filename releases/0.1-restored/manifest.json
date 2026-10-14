@@ -1,0 +1,8 @@
+{
+  "version": "0.1-restored",
+  "description": "Восстановленный исходный 2D-прототип с управляемым роботом, десятью предметами, паром и четырьмя поручениями.",
+  "note": "Recovered original source and timer correction from saved creation history. Re-exported standalone HTML, not an original byte-for-byte archived export.",
+  "sha256": "c173ac6d57f0287c43e83abe84ea215cc33ce6a6f7cb0709973b453ac90f8ce6",
+  "createdAt": "2026-10-14T11:53:21.983Z",
+  "standalone": true
+}

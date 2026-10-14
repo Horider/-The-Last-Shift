@@ -1,0 +1,11 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'..'),dist=path.join(root,'src/robot-2d/dist'),version='0.1-restored',dir=path.join(root,'releases',version);
+if(fs.existsSync(dir))throw Error('Existing snapshot is never overwritten');
+let html=fs.readFileSync(path.join(dist,'index.html'),'utf8');
+html=html.replace('<link rel="stylesheet" href="style.css">',()=>'<style>'+fs.readFileSync(path.join(dist,'style.css'),'utf8')+'</style>');
+html=html.replace('src="assets/station-watercolor.png"','src="data:image/png;base64,'+fs.readFileSync(path.join(dist,'assets/station-watercolor.png')).toString('base64')+'"');
+const code=['core.js','game.js'].map(f=>{html=html.replace(`<script defer src="${f}"></script>`,'');return fs.readFileSync(path.join(dist,f),'utf8');}).join('\n');new vm.Script(code);
+html=html.replace('</body>',()=>'<script>'+code.replace(/<\/script/gi,'<\\/script')+'</script></body>');
+html=html.replace('Последняя смена — акварельная история</title>','Последняя смена — 2D-робот 0.1 (восстановленная)</title>').replace('Прототип 0.1 · 6–8 минут','Прототип 0.1 · 2D-робот · восстановленная');
+fs.mkdirSync(dir);fs.writeFileSync(path.join(dir,'index.html'),html,{flag:'wx'});fs.writeFileSync(path.join(dir,'manifest.json'),JSON.stringify({version,description:'Восстановленный исходный 2D-прототип с управляемым роботом, десятью предметами, паром и четырьмя поручениями.',note:'Recovered original source and timer correction from saved creation history. Re-exported standalone HTML, not an original byte-for-byte archived export.',sha256:crypto.createHash('sha256').update(html).digest('hex'),createdAt:new Date().toISOString(),standalone:true},null,2),{flag:'wx'});
+require('./update-menu.cjs');console.log('Saved 2D robot '+version);

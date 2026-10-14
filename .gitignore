@@ -1,0 +1,4 @@
+.local/
+releases/preview/
+# One-time local recovery helper refers to private session history.
+tools/recover-robot-2d.cjs

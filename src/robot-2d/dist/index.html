@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#eee5cc"><meta name="description" content="Последняя смена — маленькая акварельная история о роботе, туманных поручениях и вещах, которые стоит сохранить."><title>Последняя смена — акварельная история</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect x='9' y='15' width='42' height='35' rx='13' fill='%237e9797'/%3E%3Ccircle cx='23' cy='30' r='4' fill='%23f9edcf'/%3E%3Ccircle cx='39' cy='30' r='4' fill='%23f9edcf'/%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"><script defer src="core.js"></script><script defer src="game.js"></script></head>
+<body>
+<svg class="filter-defs" aria-hidden="true"><defs><filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><filter id="watercolor"><feTurbulence type="fractalNoise" baseFrequency=".028" numOctaves="2" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
+<main class="app">
+ <header class="masthead"><div class="title-group"><div class="tiny-robot" aria-hidden="true">▰<span>••</span></div><div><h1>Последняя смена</h1><p>Маленькая история о важных вещах</p></div></div><nav aria-label="Настройки"><button class="quiet" id="sound" aria-pressed="false" title="Включить звук">Звук: выкл.</button><button class="quiet" id="help">Как играть</button><button class="pause-button" id="pause" title="Пауза, Esc">Ⅱ <span>Пауза</span></button></nav></header>
+ <div class="game-layout">
+  <section class="play-column" aria-label="Космическая станция">
+   <div class="statusbar"><div class="station-name"><span class="status-dot"></span>Станция «Вереск»<span class="station-note">Отсек воспоминаний</span></div><div class="numbers"><div><span class="metric-label">До отбытия</span><strong id="timer">05:00</strong></div><div class="rating-metric"><span class="metric-label">Верность команд <button id="rating-help" class="info" aria-label="Как считается верность команд">?</button></span><strong id="rating">—</strong></div></div></div>
+   <div id="scene" class="scene" tabindex="0" role="group" aria-label="Игровое поле. Нажмите на пол для движения или используйте стрелки. Предметы можно осмотреть, подойдя к ним.">
+    <img src="assets/station-watercolor.png" alt="Акварельный отсек станции: кухня, стол капитана, лаборатория и шлюз" class="room" draggable="false">
+    <div class="room-label kitchen">Кухня</div><div class="room-label captain">Капитан</div><div class="room-label lab">Лаборатория</div>
+    <div id="items" class="items"></div><canvas id="world" width="960" height="640" aria-hidden="true"></canvas>
+    <button id="hatch" class="hatch" aria-label="Подойти к грузовому шлюзу"><span>Шлюз</span><span class="hatch-arrow">↗</span></button>
+    <div id="context" class="context" aria-live="polite"></div><div class="scene-caption">Кликни по полу — робот пойдёт туда</div>
+   </div>
+   <div class="under-scene"><div class="carry"><span class="carry-label">В руках</span><span id="carry-icon" aria-hidden="true"></span><strong id="carry-name">Пока ничего</strong></div><div class="action-row"><button id="inspect" class="action">Осмотреть <kbd>F</kbd></button><button id="interact" class="action primary">Взять <kbd>E</kbd></button><button id="drop" class="action" disabled>Положить <kbd>Q</kbd></button></div></div>
+   <div class="keyguide"><span><kbd>W A S D</kbd> / стрелки — движение</span><span>Или кликни на вещь, чтобы подойти</span><span id="steam-status">Пар: безопасно</span></div>
+  </section>
+  <aside class="journal" aria-label="Поручения и бортовой компьютер">
+   <section class="order-sheet"><div class="sheet-heading"><span>Лист поручений</span><span id="order-count">1 / 4</span></div><div class="progress-stitches" id="progress" aria-label="Прогресс поручений"></div><h2 id="order-title">На чёрный день</h2><p id="order-text" class="order-text"></p><button id="hint" class="hint">Уточнить у ЛУЧа <span>?</span></button><p class="hint-note">Уточнения не снижают рейтинг</p></section>
+   <section class="computer"><div class="computer-head"><div class="monitor" aria-hidden="true"><span class="eyes">• •</span><span class="mouth">⌣</span></div><div><h2>ЛУЧ</h2><p>Бортовой компьютер</p></div><span class="online-light" title="На связи"></span></div><p id="speech" aria-live="polite">Все люди эвакуированы. Почти всё важное — тоже. Остались мы с тобой.</p><div class="signature">С заботой. Согласно протоколу.</div></section>
+   <div class="saved-section"><span class="saved-label">Уже в капсуле</span><div id="saved" class="saved"><span class="empty-saved">Здесь скоро станет уютнее</span></div></div>
+   <button id="restart" class="restart">Начать смену заново</button>
+  </aside>
+ </div>
+ <footer><span>Одна смена. Несколько поручений. Немного человечности.</span><span>Прототип 0.1 · 6–8 минут</span></footer>
+</main>
+<dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+<div id="toast" class="toast" role="status"></div>
+</body></html>

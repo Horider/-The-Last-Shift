@@ -1,0 +1,20 @@
+FILLED IMAGE PROMPT
+
+Use case: precise-object-edit. Edit the supplied captain cabin image at original 1536x1024 dimensions.
+ADD exactly THREE small understated native collectible props into this detailed rice-paper watercolor and delicate pencil scene. They must blend into ordinary clutter: the same warm dim illumination, muted colors, soft pencil texture, perspective, shadows. No isolated sticker objects, glow, highlight, front-center display, or text.
+1) A small brass pocket compass lying flat on the desk around x18% y55%, roughly 3% image width and 3% image height. Aged dull brass rim, cream face, dark needle; matching foreshortening of desktop.
+2) A small captain's worn dark brown leather logbook placed naturally on the desk around x56% y53%, about 6% image width and 4% image height, plain cover, a tiny strap, no letters. Place on actual desktop beside the ordinary existing journal, with perspective and slight occlusion integrated naturally; avoid the hanging blanket.
+3) A small yellowed postcard with a simple hand-drawn five-point star, pinned near the round window approximately x36% y29%, about 4% image width and 5% image height. It should feel like a casually tucked or pinned scrap on/near the interior porthole edge, not floating in outer space. No lettering.
+PRESERVE the existing three collectible objects EXACTLY: the navigation chart partly beneath books on left desk at x21–35% y47–54%, framed family photo at x41–45% y37–46%, and stuffed astronaut in right bed at x83–91% y32–43%. Preserve all other scene objects, composition, geometry, viewpoint, colors, grain, lighting, and room outlines unchanged. No other additions. No UI, borders, labels or watermarks.
+
+CLEAN PLATE PROMPT
+
+Use case: precise-object-edit. Create a CLEAN PLATE by editing this exact supplied 1536x1024 cabin image.
+REMOVE ALL SIX of these collectible props, including their own shadows, replacing each ONLY with the natural local background:
+1) Small brass pocket compass resting on left desktop at pixel x258 y542 through x326 y585, including its small loop/cord just above around x248 y523. Restore wood desktop.
+2) Brown leather logbook lying at right end of desktop x757 y471 through x881 y528. Remove the leather book only, restore wooden desktop under it. Preserve nearby cup and plant, existing pen, and chair blanket.
+3) Small vertical yellowed star postcard pinned on the upper-right edge of the round window at x660 y111 through x723 y200, including pin and shadow. Restore window rim and view through window.
+4) Flat paper navigation chart on left desktop x320 y481 through x545 y556, partly tucked beneath stack of books. Restore desktop and preserve the brown book stack.
+5) Small framed family photograph at the back of desk x626 y375 through x698 y473. Restore wall/desk behind it, preserve neighboring pencil case, pencil holder and books.
+6) Stuffed astronaut in the right bed x1274 y324 through x1398 y434. Restore green blanket folds.
+CRITICAL: preserve the entire rest pixel-consistently: exact camera framing, dimensions, perspective, object positions, furniture, starfield, soft warm colors, shadows, grain, watercolor style and geometry. No global redraw, repaint, recoloring or style change. Only six small local removal areas. This clean image will supply local replacement patches in a hidden-object game. No new objects or text.

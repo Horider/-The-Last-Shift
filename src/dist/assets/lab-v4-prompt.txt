@@ -1,0 +1,18 @@
+EDIT 1 — FIVE-PROP FILLED LAB
+Use case: precise-object-edit
+Edit target: lab-v3.png, a 1536x1024 watercolor space laboratory hidden object game background.
+Add EXACTLY THREE small subtle native-painted collectible props. Preserve the existing clay-pot living plant at x22.2%-29.5%, y29.7%-41.3% and grey-pot artificial plant at x67.7%-76.3%, y34.6%-49.8% exactly unchanged.
+1. A small sealed clear glass jar containing muted green preserved moss, nestled among existing specimen glass jars on the seed drawer cabinet toward x36% y40%. Its total size about 4% width by 8% height. Preserve surrounding jars; a moss-filled jar can occupy a naturally fitting small space along that back row. It should have a closed lid, no hose.
+2. A small worn ochre paper seed packet lying flat on the workbench around x43% y62%, subtle short perspective foreshortening, total size about 5% width by 4% height. A tiny seed drawing or scattered decorative marks only, NO legible lettering.
+3. A tiny conical glass flask with subdued green algae liquid among the glassware on the right around x80% y54%. Total size about 3% width by 7% height. The flask is closed with a small rubber stopper: a living portable sealed algae culture. NO fixed connections, tubes, hoses or wires. Avoid changing the existing right-hand microscope.
+All three additions must match the room's exact pencil outlines, watercolor washes, fibrous rice paper, warm lighting, muted colors, low contrast, worn materials, perspective, naturally small contact shadows and surrounding object's visual scale. They must blend into the scene, not stand out as bright stickers. Preserve room composition, furniture, glassware, star window, terrarium, wall notes, chair, bench, existing two plants, geometry, palette, all other details and resolution. Change only the three local addition areas. No characters, UI, text, glow, markers, borders.
+
+EDIT 2 — CLEAN PAIRED FRAME
+Use case: precise-object-edit
+Edit target: lab-v4.png, 1536x1024 watercolor space laboratory. Produce a clean paired game frame by removing ONLY these FIVE collectible props and their small contact shadows:
+1. Left small leafy plant in clay pot on cabinet top: x342-453 y303-423 pixels.
+2. Right small leafy plant in weathered grey pot at rear wall: x1040-1171 y354-509 pixels.
+3. The clear sealed jar with green moss on the cabinet, just to the RIGHT of the tall thin botanical jar and to the LEFT of the very short brown specimen jar: x638-687 y342-422 pixels. Remove ONLY this green moss jar, preserve the adjacent taller botanical jar and tiny brown jar.
+4. The worn ochre paper seed packet lying flat in the middle of the desk: x631-758 y583-644 pixels.
+5. The small conical glass flask with green algae and stopper, just left of the right microscope base, in front of the tall brown specimen jar: x1246-1308 y477-585 pixels. Remove ONLY this green conical flask, preserve the larger jar behind it and microscope.
+Restore naturally occluded cabinet top, rear wall botanical note, rear desk surface and middle desk underneath. Preserve all remaining vegetation, especially illuminated terrarium and trailing leaves. Preserve every other glass jar, microscope, seed drawer, paper, chair, lamp, window, room shape, texture, palette, lighting, crop and camera. Change only these five tiny local removal regions. Pixels elsewhere should remain unchanged, no global repainting or smoothing. Maintain exact original image geometry and 1536x1024 resolution. No new objects, text or UI.

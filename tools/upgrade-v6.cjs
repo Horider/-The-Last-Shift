@@ -1,0 +1,25 @@
+const fs=require('node:fs');const p='src/dist/mobile.js';let js=fs.readFileSync(p,'utf8');
+js=js.replace("let state=C.createState()","let roomCamera=null,cameraState=null;\n const t=(ru,en)=>GameLocale.lang==='en'?en:ru;\n let state=C.createState()");
+js=js.replace(/ function crate\(\)\{.*\n/," function crate(){nav('crate');}\n function inspectCargo(id){const it=C.item(state,id);show(esc(it.name),`<p>${esc(it.description)}</p><div class=\"facts\">${it.facts.map(f=>`<span>${esc(f)}</span>`).join('')}</div>`,[{label:t('Закрыть','Close'),run:close}],t('Уже в ящике','Already in the crate'));}\n");
+js=js.replace("['luch','journal'].includes(location)","['luch','journal','crate'].includes(location)");
+js=js.replace("['hub','luch','journal',...Object.keys(R.ROOMS)]","['hub','luch','journal','crate',...Object.keys(R.ROOMS)]");
+js=js.replace("location=next;zoom=false;", "if(next!==location){roomCamera?.destroy();roomCamera=null;cameraState=null;}location=next;zoom=false;");
+js=js.replace(" function render(){"," function render(){\n  if(roomCamera){cameraState=roomCamera.getState();roomCamera.destroy();roomCamera=null;}");
+// Remove the visible crate action from the hall. The hatch is clickable only in the epilogue.
+js=js.replace('<button id="send" class="hub-send ${final()?\'final-send\':\'\'}">${final()?\'В капсулу\':\'Сложить в ящик\'}</button>', '${final()?\'<button id="send" class="hub-send final-send" aria-label="В капсулу"></button>\':\'\'}');
+const crateBranch=`  }else if(location==='crate'){
+   $('screen-bg').src=D.crate;$('screen').classList.add('crate-screen');
+   $('screen').innerHTML=\`<h1 class="screen-title">\${t('Внутри ящика','Inside the crate')}</h1><div class="crate-cargo">\${state.saved.map((id,i)=>\`<button class="cargo-object" data-cargo="\${id}" aria-label="Осмотреть: \${esc(C.item(state,id).name)}" style="left:\${17+i*16}%;top:\${35+(i%2)*2}%">\${cargoSprite(id)}</button>\`).join('')}</div>\${state.saved.length?'':\`<p class="empty-crate-note">\${t('Пока пусто','Empty for now')}</p>\`}<div class="crate-panel"><h2>\${t('Груз: ','Cargo: ')}\${state.saved.length}</h2><p>\${state.carry?esc(C.item(state,state.carry).name):t('В руках ничего. Принеси вещь из отсека.','Empty hands. Bring an item from a room.')}</p><div class="panel-actions">\${final()?\`<button id="crate-depart" class="btn">\${t('Отправиться в капсулу','Board the capsule')}</button>\`:\`<button id="crate-put" class="btn" \${!state.carry||!orderActive?'disabled':''}>\${t('Положить вещь','Put the item inside')}</button>\`}<button id="crate-back" class="btn secondary">\${t('Вернуться в шлюз','Back to airlock')}</button></div></div>\`;
+   document.querySelectorAll('[data-cargo]').forEach(b=>b.addEventListener('click',()=>inspectCargo(b.dataset.cargo)));bind('crate-put',openGate);bind('crate-depart',openGate);bind('crate-back',()=>nav('hub'));
+`;
+js=js.replace("  }else if(location==='luch'){",crateBranch+"  }else if(location==='luch'){");
+js=js.replace("$('screen').classList.add('room-screen');if(zoom)$('screen').classList.add('zoomed');","$('screen').classList.add('room-screen');");
+const lines=js.split('\n'),idx=lines.findIndex(l=>l.includes("$('screen').innerHTML=`<h1")&&l.includes('class="room-tools"'));if(idx<0)throw Error('Room template not found');
+lines[idx]=`   $('screen').innerHTML=\`<h1 class="screen-title">\${room.name}</h1><div class="camera-view" id="camera-view"><div id="scene" class="room-scene"><img src="\${room.image}" alt="\${room.name}, вид от первого лица">\${patches}\${buttons}</div></div><div class="room-tools"><div class="camera-zoom"><button data-camera-zoom="out" id="zoom-out" aria-label="\${t('Отдалить','Zoom out')}">−</button><button data-camera-zoom="in" id="zoom-in" aria-label="\${t('Приблизить','Zoom in')}">+</button></div><button id="search-help">Помочь с поиском</button></div><p class="room-note">\${t('Проведи по комнате · + и − меняют масштаб','Drag to look around · + and − adjust zoom')}</p>\`;
+   roomCamera=RoomCamera.attach($('camera-view'),$('scene'),cameraState||{});roomCamera.set(roomCamera.getZoom());bind('zoom-out',()=>roomCamera.set(roomCamera.getZoom()-.08));bind('zoom-in',()=>roomCamera.set(roomCamera.getZoom()+.08));`;
+js=lines.join('\n').replace("bind('zoom',()=>{zoom=!zoom;render();});",'');
+js=js.replace("version:'0.5'","version:'0.6'");
+js=js.replace('На телефоне нажми «Увеличить», чтобы рассмотреть комнату. Все описания сохраняются в журнал.','Комната занимает весь экран. Проведи по ней для осмотра, кнопки + и − меняют масштаб. Описания сохраняются в журнал.');
+js=js.replace('«Увеличить» приближает комнату: проведи по изображению для перемещения. «Помочь с поиском» временно обводит предметы без штрафа.','Проведи по комнате, чтобы оглядеться. Кнопки + и − немного меняют масштаб. Нажми на ящик в шлюзе, чтобы посмотреть груз и положить вещь. «Помочь с поиском» временно обводит предметы без штрафа.');
+if(js.includes("?'В капсулу':'Сложить в ящик'"))throw Error('Old hall action remains');
+fs.writeFileSync(p,js);

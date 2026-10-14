@@ -1,0 +1,7 @@
+/* Room artwork contains the objects; controls are transparent hit regions. */
+.native-item{position:absolute;padding:0;border:0;background:transparent;pointer-events:auto;cursor:pointer;transform:none;transition:none;box-shadow:none}
+.native-item:active{transform:none!important}
+.native-item:hover{background:transparent}
+.native-item:focus-visible,.reveal .native-item{outline:2px dashed #e8dfb8;outline-offset:2px;border-radius:8px}
+.clean-zone{position:absolute;overflow:hidden;pointer-events:none;mask-image:linear-gradient(to right,transparent,#000 7%,#000 93%,transparent),linear-gradient(to bottom,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect}
+.clean-zone img{position:absolute;max-width:none;object-fit:fill;pointer-events:none}

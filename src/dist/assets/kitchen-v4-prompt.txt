@@ -1,0 +1,21 @@
+FILLED FRAME PROMPT
+
+Use case: precise-object-edit.
+Edit target: supplied kitchen-v3.png, 1536x1024.
+Add EXACTLY THREE modest collectible props naturally painted into the existing space-station kitchen clutter. Match the scene's existing warm watercolor on fibrous rice paper, pencil contours, muted sage/ochre/indigo, worn metal, exact soft practical lighting and eye-level perspective. These must be native environmental objects, not pasted stickers or isolated prizes.
+1. THERMOS: a slim worn sage-metal vacuum thermos with dark screw cap, around x16% y38%, tucked into the narrow far-left rear shelf beside the existing small jars. Fit into the shelf with base at y48%, about3% image width and11% image height. Prefer natural shelf placement close to requested x13% y39%, respecting the existing wall geometry.
+2. MUG: one small cream enamel mug with dark rim and a subtle brown coffee stain down its side, on the middle shelf centered around x48% y20%, base at y22%, nestled between existing mugs/tins. About4.5% image width and6% image height; preserve the existing planetary cream mug farther left.
+3. COFFEE TIN: one small worn ochre-and-sage cylindrical space-coffee tin with a tiny simple coffee-bean/planet emblem and a spoon sticking out, on the rear-right counter around x84% y54%, immediately right of faucet and left of the soap bottle. About3.5% image width, tin5.5% image height plus spoon. Keep it naturally packed into the row of clutter.
+The existing sage-green drip COFFEE MACHINE at x32%y50% and cream RATION POUCH with green planet emblem at x67%y52% MUST remain unchanged in shape, exact position and size. Keep all room geometry, camera, dimensions1536x1024, shelf geometry, lighting, counter and original contents unchanged except necessary minimal occlusion by these three additions. No extra collectibles, no text, labels, UI, outlines, highlights, spotlights, bright colors, borders or watermark. Full-bleed image.
+
+CLEAN FRAME PROMPT
+
+Use case: precise-object-edit.
+Edit target: supplied 1536x1024 kitchen-v4.png.
+Create matching CLEAN PLATE for localized pickup patches in a hidden-object game. REMOVE ONLY the following FIVE specifically identified collectible objects, including their contact shadows, and paint the small occluded background surfaces naturally:
+1. THERMOS: slim sage-metal thermos with black screw cap on far-left narrow shelf, x16.5–18.7%, y31.4–41.8%. Remove the thermos only, preserve jars/shelf around it.
+2. MUG: small cream enamel mug with brown vertical coffee stain and black rim on middle shelf, x46.1–50.3%, y16.6–21.9%. Remove ONLY this stained mug and its handle. Keep the larger cream planetary mug immediately to its left and blue mug immediately to its right unchanged.
+3. COFFEE TIN: cylindrical ochre tin with dark green planet emblem and spoon sticking out, on rear-right counter immediately right of faucet and left of green pump bottle, x80.9–84.9%, y46.7–56.7%. Remove the tin AND its spoon only. Preserve faucet and green soap pump.
+4. COFFEE MACHINE: sage-green drip coffee maker including its glass carafe on rear-left counter next to plant mug, x28.6–36.8%, y42.1–57.4%. Remove machine and carafe, restore wall/towel and counter behind them. Keep plant mug and frying pan.
+5. RATION: small cream paper pouch with green ringed-planet emblem between the green metal rectangular tin and garlic, x64.6–69.1%, y47.1–57.4%. Remove paper pouch only; preserve green tin, garlic and ceramic bowls behind.
+Strictly preserve all other objects and image geometry, camera, crop, room layout, counter edges, colors, lights, paper texture, overall contrast and dimensions1536x1024. No rearrangement, no new objects, no global style changes. This must be the same full-bleed watercolor space-kitchen frame with only these five target objects absent. No text, UI, border or watermark.

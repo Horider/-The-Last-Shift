@@ -1,0 +1,13 @@
+* text=auto eol=lf
+*.js text eol=lf
+*.cjs text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.png binary
+*.jpg binary
+# Standalone releases have a recorded checksum; preserve their exact bytes.
+releases/**/index.html -text

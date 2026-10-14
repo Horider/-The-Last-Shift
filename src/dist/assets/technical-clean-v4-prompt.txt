@@ -1,0 +1,10 @@
+Use case: precise-object-edit
+Edit target: technical-v4.png, 1536x1024 watercolor space station workshop.
+Create a clean paired frame. Remove ONLY these SIX collectible objects, including their own small contact shadows. All given coordinates are percentages of the image:
+1. Small red rectangular battery with lightning bolt, just left of the red tool tin and right of the copper wire spool: bounding box left25.5 top38.4 width4.1 height9.5.
+2. Second small red rectangular battery with lightning bolt standing left of the monitor: left49.5 top38.6 width4.6 height9.6.
+3. Green computer memory circuit board lying on the right bench: left67.2 top48 width8.8 height5.8.
+4. Small BLUE rectangular battery with lightning bolt standing at rear right bench, to the right of the tool mug beneath red desk lamp: left78.5 top38.4 width3.6 height7.8.
+5. Small cylindrical RED FLASHLIGHT leaning upright against the left toolbox, immediately left of the white planet mug: left7.1 top41 width3.4 height10. Remove the entire flashlight, not the toolbox or mug.
+6. Yellow rectangular POWER BANK lying near the middle bench with attached black looping USB cable: left51.7 top48.8 width13.6 height8.5. Remove BOTH the entire yellow powerbank AND its ENTIRE curved black cable including the terminal plug at its right-hand end, and contact shadows.
+Restore naturally occluded benchtop, toolbox side and nearby background behind only these removed objects. Preserve ALL other tools, mugs, coiled cables, screwdriver lying behind yellow powerbank, monitor, wall pictures, lamp, vice, stool, open drawer, wire reels, astronaut, window, plants, existing clutter and room architecture. Exact same crop, camera perspective, resolution, geometry, light, palette and watercolor rice-paper texture. Pixels outside the six small target regions must remain unchanged. No global repainting, smoothing, relighting, new objects, text or UI.

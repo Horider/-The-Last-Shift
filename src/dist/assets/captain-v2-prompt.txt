@@ -1,0 +1,7 @@
+Use case: stylized-concept
+Asset type: background for warm humorous hidden-object space-station game Last Shift.
+Create one landscape 1536x1024 full-bleed illustration. FIRST PERSON eye-level viewpoint as though standing inside a cozy worn utilitarian captain's cabin aboard a space station. This is an interior perspective looking across the room, NOT top-down, NOT isometric, NOT cutaway. No visible person or body parts.
+Style: delicate pencil drawing with translucent watercolor on fibrous rice paper, warm human handmade detail, muted sage, ochre, indigo and soft cream, low contrast. Subtle texture throughout to the edges, no paper border. Quiet gently humorous lived-in clutter.
+Composition: desk extends across lower-middle left and center; a bunk with soft pillow and rumpled blanket occupies the right. Round porthole window shows stars. Ordinary unframed books, journals, cups, pencil case, small navigation instruments, and shelves integrated naturally into the room.
+Important overlay placement: leave small naturally clear spaces on desktop centered at x30% y67% and x57% y61%, and on bunk centered at x80% y66%. These must be plausible surfaces for tiny game objects added later, surrounded by low contrast clutter that helps objects blend.
+Do not draw any maps, framed photographs, plush toys or stuffed animals. No UI, letters, words, numbers, titles, logos, watermarks, readable text, visible character, borders. Full-bleed scene.

@@ -1,0 +1,34 @@
+/* The artwork and every control share one fitted portrait coordinate space. */
+.game-frame{width:min(100vw,calc(100dvh * 2 / 3));height:100dvh;max-width:none;container-type:inline-size}
+.screen-bg{object-fit:fill;background:none}
+.hud{left:3%;right:3%;top:max(8px,env(safe-area-inset-top))}
+.round{width:clamp(30px,10cqw,44px);height:clamp(30px,10cqw,44px);font-size:clamp(13px,4cqw,18px)}
+.hud-metrics{padding:6px 12px;gap:12px;font-size:clamp(14px,4.5cqw,19px)}
+.screen-title{top:8%;left:14%;right:14%;font-size:clamp(16px,5cqw,26px)}
+.home-icon{position:absolute;left:0;top:calc(100% + 10px)}
+.bottom-hud{left:3%;right:3%;bottom:max(8px,env(safe-area-inset-bottom));display:grid;grid-template-columns:clamp(36px,12cqw,48px) minmax(0,1fr) minmax(50px,22%);gap:6px;align-items:stretch}
+.brief,.carry-slot{min-width:0;max-width:none;overflow-wrap:anywhere;min-height:42px;font-size:clamp(9px,2.7cqw,12px);padding:7px 8px}
+.memory-icon{padding:4px;border:1px solid #a6b297;background:#dce6c9ed;border-radius:9px;min-height:42px;color:#344e43}
+.memory-icon svg{display:block;width:100%;height:100%;max-height:46px}.memory-icon.current{background:#a5bd93}
+.hub-door{width:22%;left:auto;right:auto;min-height:0;padding:5px 2px;background:#eee4c6bb;border:1px solid #988b6988;border-radius:3px;box-shadow:none;font-size:clamp(9px,2.8cqw,15px);font-weight:600;line-height:1.15;text-align:center;overflow-wrap:normal}
+.door-kitchen{left:13%;top:27%}.door-captain{left:65%;top:27%}.door-lab{left:13%;top:56%}.door-technical{left:65%;top:56%}
+.hub-luch{left:43.4%;top:29%;width:13.2%;height:10.6%;min-height:0;display:flex;align-items:flex-end;justify-content:center;padding:0 0 2%;background:transparent;border:0;border-radius:0;font-size:clamp(9px,2.8cqw,15px);color:#eadfc0;text-shadow:0 1px 3px #192c24}
+.hub-send{left:34%;top:76%;width:32%;min-height:0;padding:7px 2px;font-size:clamp(10px,3cqw,16px);line-height:1.15;background:#c6d2acc9}
+.hub-send:not(.final-send){left:16.5%;top:71%;width:22.4%;font-size:clamp(9px,2.5cqw,13px);padding:5px 2px}
+.room-screen{padding:23% 0 20%}.room-scene{width:100%;max-height:none}
+.room-tools{top:15%;left:3%;right:3%}.room-tools button{min-height:32px;padding:7px 8px;font-size:clamp(10px,2.6cqw,12px)}
+.room-note{bottom:13%;left:5%;right:5%;font-size:clamp(10px,2.7cqw,12px)}
+.luch-panel{left:4%;right:4%;bottom:13%;max-width:none;max-height:48%;transform:none;top:auto;padding:clamp(10px,3.5cqw,18px)}
+.journal-panel{left:4%;right:4%;top:16%;bottom:13%;max-width:none;max-height:none;transform:none;padding:clamp(10px,3.5cqw,18px)}
+.luch-panel p,.journal-entry p{font-size:clamp(11px,3.3cqw,14px);line-height:1.4}.luch-panel h2,.journal-panel h2{font-size:clamp(17px,5cqw,23px)}
+.btn{min-height:38px;padding:8px 10px;font-size:clamp(11px,3.2cqw,14px)}.panel-actions{gap:6px}
+.dialog-content{max-width:100%;max-height:calc(100dvh - 25px);padding:clamp(12px,4cqw,24px)}
+.dialog-content h2{font-size:clamp(20px,6cqw,27px)}.dialog-content p{font-size:clamp(12px,3.5cqw,14px)}
+.toast{left:4%;right:4%;bottom:13%;font-size:clamp(10px,3cqw,12px)}
+.zoomed{padding-top:23%;padding-bottom:22%}.zoomed .room-scene{width:160%}.zoomed .room-tools{position:absolute;top:15%}.zoomed .room-note{display:none}
+.crate-hit{position:absolute;left:16%;top:60%;width:23.5%;height:11%;padding:0;border:0;background:transparent;z-index:4}
+.cargo-items{position:absolute;inset:0;pointer-events:none;z-index:3}.crate-item{position:absolute;width:5.5%;height:5.5%;filter:brightness(.85) drop-shadow(0 1px 1px #463d2466)}
+.cargo-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;background-size:var(--sheet-size);background-position:var(--sprite-pos)}
+.crate-front{position:absolute;left:16.5%;top:66%;width:22.4%;height:4.1%;overflow:hidden;pointer-events:none;z-index:5}.crate-front img{position:absolute;width:446.43%;height:2439.02%;left:-73.66%;top:-1609.76%;max-width:none}
+.crate-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.crate-card{padding:9px;border:1px solid #c2c8ac;border-radius:6px;text-align:center;font-size:12px}.crate-card .cargo-sprite{width:74px;height:90px;margin:auto}.crate-empty{font-style:italic}
+@media(max-height:550px){.hud-metrics{padding:3px 7px;gap:5px;font-size:13px}.hud-metrics button{font-size:11px}.bottom-hud{bottom:4px;gap:3px;grid-template-columns:32px minmax(0,1fr) 21%}.brief,.carry-slot,.memory-icon{min-height:32px;font-size:9px;padding:4px}.memory-icon svg{max-height:30px}.home-icon{top:calc(100% + 4px)}.luch-panel{bottom:14%;max-height:51%;padding:9px}.journal-panel{bottom:14%}.luch-panel p{font-size:11px;margin:5px 0}.luch-panel h2{font-size:17px}.btn{min-height:31px;font-size:10px;padding:5px 7px}.dialog-kicker{font-size:9px!important}}

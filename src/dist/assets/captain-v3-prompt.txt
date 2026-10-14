@@ -1,0 +1,18 @@
+FILLED IMAGE PROMPT
+
+Use case: precise-object-edit.
+EDIT image 1, the captain cabin scene. Image 2 is only supporting reference for the identities of a star navigation chart, small framed family photograph, and plush astronaut. Preserve the original cabin scene composition, dimensions 1536x1024, perspective, geometry, textures, watercolor/pencil style, lighting and all existing objects.
+Paint THREE SMALL hidden objects NATIVELY into the cabin. They must look like understated ordinary clutter already painted as part of this scene, with exactly the same muted contrast, paper grain, shadows, soft edges, perspective and lighting. No graphic stickers, no glow, no highlighted objects.
+1) A small folded ochre navigation chart with faint circular star-route lines, lying FLAT on the desk partly tucked beneath the existing stack of books around x26% y52%. Visible area about 7% of image width, 3% image height. Match horizontal foreshortening of desktop. Paper aged and close in color to desk.
+2) A TINY worn wood family photograph frame propped leaning with the books near the BACK of the desk around x48% y43%. About 3% of image width and 6% of height. Soft barely distinguishable family silhouettes, no text. Place among existing vertical book clutter, not in open front-center.
+3) A SMALL old cream stuffed astronaut toy partly nestled/occluded in the blanket folds on the right bed near x82% y42%. About 4% image width, 7% height. Soft stuffed cloth, round dark visor, muted sleeve patches. Half hidden under the blanket, same warm dim illumination. Must look forgotten among ordinary objects.
+These are subtle hidden-object game targets, not conspicuous display props. Do not add any other objects. No UI, text, labels, borders, arrows, glowing edges, or markers. Preserve full-bleed composition and all remaining room geometry.
+
+CLEAN PLATE PROMPT
+
+Use case: precise-object-edit.
+Edit this image at EXACTLY the original dimensions 1536x1024. This is a clean plate for a hidden-object game: REMOVE ONLY the following three small objects AND their own cast shadows.
+1. The flat paper star navigation chart on the left desktop, roughly pixel rectangle x320 y481 through x545 y556, partly tucked beneath the stack of brown books. Restore ordinary empty wooden desktop in this exact local area. Preserve the stack of brown books above it completely.
+2. The small framed family photograph at the back of the desk, roughly x626 y375 through x698 y473. Restore wall and desktop behind it. Preserve the pencil case to its left/below, pencil holder to its right, and all books.
+3. The small stuffed astronaut nestled in the right bed blanket, roughly x1274 y324 through x1398 y434. Restore muted green blanket folds behind it.
+CRITICAL: leave the rest of the image pixel-consistent with this supplied image: identical framing, camera, furniture outlines, stars, colors, illumination, texture, geometry, all objects. Do not redraw, shift, recolor, beautify, or simplify other areas. Edit only these three specified local regions. The resulting image should be indistinguishable everywhere else, suitable for tiny local replacement patches. Keep full-bleed watercolor and delicate pencil art on textured paper. Do not add any objects or text.
