@@ -17,6 +17,7 @@
  for(const [id,name,room,description,facts,box] of extra){C.ITEMS.push({id,name,description,facts,kind:id,x:box[0],y:box[1]});R.PLACEMENTS[id]={room,box,x:box[0]+box[2]/2,y:box[1]+box[3]/2};}
  for(const room of Object.keys(R.ROOMS)){R.ROOMS[room].image=`assets/${room}-v4.png`;R.ROOMS[room].clean=`assets/${room}-clean-v4.png`;}
  R.patchBox=id=>{const [l,t,w,h]=R.PLACEMENTS[id].box;return [l-.8,t-.8,w+1.6,h+1.6];};
+ R.ROOMS.kitchen.image='assets/kitchen-v9.png';R.ROOMS.kitchen.clean='assets/kitchen-clean-v9.png';
  C.ORDERS[1].accept.push('thermos','coffeeTin');Object.assign(C.ORDERS[1].replies,{thermos:'Горячий кофе сохранён. Переносной запуск экипажа.',coffeeTin:'Утренний запас сохранён. Осталось найти воду и человека.'});
  C.ORDERS[2].accept.push('compass');C.ORDERS[2].replies.compass='Резервный компас капитана сохранён. Он доверял ему после калибровки.';
  C.ORDERS[3].accept.push('algae');C.ORDERS[3].replies.algae='Живой коллектив водорослей эвакуирован. Один билет на всех.';

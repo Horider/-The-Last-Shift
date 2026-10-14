@@ -37,6 +37,10 @@
  'Комната занимает весь экран. Проведи по ней для осмотра, кнопки + и − меняют масштаб. Описания сохраняются в журнал.':'The room fills the screen. Drag to look around; + and − adjust zoom. Descriptions are saved in your memory log.',
  'Проведи по комнате, чтобы оглядеться. Кнопки + и − немного меняют масштаб. Нажми на ящик в шлюзе, чтобы посмотреть груз и положить вещь. «Помочь с поиском» временно обводит предметы без штрафа.':'Drag to look around the room. + and − adjust zoom a little. Tap the crate in the airlock to view cargo and put an item inside. Search help briefly outlines objects without a penalty.'
  });
+ Object.assign(ui,{
+ 'При входе видна вся комната. Нажми на стрелку или название зоны, чтобы подойти. «Общий план» возвращает назад. У ЛУЧа подойди к рабочему столу, чтобы получить поручение.':'The entire room is visible on entry. Tap an arrow or area name to approach. Room overview takes you back. Approach LUCH desk to get an assignment.',
+ 'В каждой комнате пять зон. Подойди к зоне нажатием на стрелку или название, затем ищи предметы. «Общий план» отдаляет камеру. В шлюзе ткань закрывает ящик на четверть за каждый принятый предмет. «Помочь с поиском» работает внутри зоны без штрафа.':'Every room has five areas. Tap an arrow or area name, then search for objects. Room overview zooms out. In the airlock, the cloth covers one quarter of the crate for each accepted object. Search help works inside an area without a penalty.'
+ });
  const itemEnglish={
  battery:['Red battery','Emergency power. Red casing, 86% charge. The label says “For a rainy day.” That day seems to have arrived.',['Emergency','86% charge','Red']],
  empty:['Spare battery','The same red casing. Charge: 3%. Someone pencilled in “Still good for a bit.”',['Emergency','3% charge','Red']],
