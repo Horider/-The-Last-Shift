@@ -1,0 +1,7 @@
+/* LUCH has a private room; the hall contains its entrance, not his computer. */
+.hub-luch{left:42%;top:31%;width:15%;height:34%;padding:0;display:block;min-height:0;background:transparent;border:0;box-shadow:none;transform:rotate(-.7deg);color:#414b3c;text-shadow:0 .5px 0 #e7dabb;mix-blend-mode:multiply;font-weight:700;font-size:clamp(9px,2.4cqw,15px)}
+.hub-luch .office-name{position:absolute;top:34%;left:5%;right:5%;line-height:1.2}
+.wide-art .hub-luch{left:45%;top:35%;width:8%;height:34%;padding:0;font-size:clamp(10px,1.4cqw,13px)}
+.wide-art .office-name{top:43%;max-width:80px;margin:auto}
+.luch-office .luch-panel{max-height:32%;bottom:13%}
+@media(max-height:550px){.luch-office .luch-panel{top:auto;bottom:14%;max-height:50%}}
