@@ -24,7 +24,7 @@
  C.ORDERS[1].hint='Нужно что-то с кухни, что питает людей: еда или кофе. Пустая кружка не подходит.';
  C.ORDERS[2].hint='Проверь владельца и назначение. Не всякая вещь в каюте принадлежит капитану.';
  C.ORDERS[3].hint='Проверь, живое ли это сейчас и можно ли перенести. Цвет листьев сам по себе ничего не доказывает.';
- root.ShiftMobileData={extraIds:extra.map(i=>i[0]),hub:'assets/hub-office-tall-v8.png',luch:'assets/luch-office-tall-v8.png',cargoOld:'assets/items-v2.png',cargoExtra:'assets/extras-v5.png',crate:'assets/crate-tall-v7.png',hubWide:'assets/hub-office-wide-v8.png',luchWide:'assets/luch-office-wide-v8.png',crateWide:'assets/crate-wide-v7.png'};
+ root.ShiftMobileData={extraIds:extra.map(i=>i[0]),hub:'assets/hub-map-tall-v10.png',luch:'assets/luch-office-tall-v8.png',cargoOld:'assets/items-v2.png',cargoExtra:'assets/extras-v5.png',crate:'assets/crate-tall-v7.png',hubWide:'assets/hub-map-wide-v10.png',luchWide:'assets/luch-office-wide-v8.png',crateWide:'assets/crate-wide-v7.png'};
  if(root.ShiftAssets){for(const room of Object.values(R.ROOMS)){room.image=root.ShiftAssets[room.image];room.clean=root.ShiftAssets[room.clean];}for(const key of ['hub','luch','cargoOld','cargoExtra','crate','hubWide','luchWide','crateWide'])root.ShiftMobileData[key]=root.ShiftAssets[root.ShiftMobileData[key]];}
  if(typeof module!=='undefined'&&module.exports)module.exports=root.ShiftMobileData;
 })(typeof window!=='undefined'?window:globalThis);
