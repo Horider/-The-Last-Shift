@@ -36,9 +36,30 @@
  z('window','Иллюминатор','Porthole',[65,0,35,49],[],'ЛУЧ смотрит на планету даже тогда, когда никто не просит прокладывать курс.','LUCH watches the planet even when nobody asks him to plot a course.'),
  z('rest','Тихий уголок','Quiet corner',[71,42,29,56],[],'Плед, подушка и растение. По инструкции это зона ожидания. ЛУЧ называет её местом для друзей.','A blanket, cushion and plant. Officially a waiting area. LUCH calls it a place for friends.')
  ]};
+ // Portrait overviews are independently composed artwork, so their clickable
+ // regions follow the portrait composition rather than the landscape source.
+ const PORTRAIT_BOXES={
+  luch:{desk:[21,32,49,27],archive:[0,10,26,52],window:[63,21,34,27],rest:[69,43,31,36]},
+  kitchen:{stove:[0,35,25,26],coffee:[23,37,28,18],shelves:[20,14,52,27],sink:[70,36,30,27],stores:[39,50,50,24]},
+  captain:{navigation:[0,28,58,24],personal:[36,30,39,20],wall:[67,5,33,26],souvenirs:[67,26,33,36],chair:[20,47,60,34]},
+  lab:{plants:[48,11,46,32],samples:[15,25,40,25],bench:[23,40,59,24],terrarium:[76,14,24,30],glassware:[72,36,28,24]},
+  technical:{tools:[0,23,33,34],power:[33,34,34,20],computer:[40,19,29,25],modules:[66,27,34,29],chargers:[42,42,36,19]}
+ };
+ const PORTRAIT_SIZES={luch:[852,1846],kitchen:[863,1823],captain:[863,1823],lab:[862,1824],technical:[863,1823]};
  function frame(vw,vh,iw,ih,box=[0,0,100,100]){const [l,t,w,h]=box,bw=iw*w/100,bh=ih*h/100,scale=Math.min(vw/bw,vh/bh);return {width:bw*scale,height:bh*scale,planeWidth:iw*scale,planeHeight:ih*scale,x:-iw*l/100*scale,y:-ih*t/100*scale,scale};}
  function owner(room,item){return ZONES[room]?.find(z=>z.items.includes(item))?.id||null;}
  function cargo(saved){const count=Math.min(4,saved.filter(id=>id!=='memory').length);return {count,percent:count*25,ready:count===4};}
- function attach(layout,canvas,plane,controls,iw,ih,box){function update(){const rect=layout.getBoundingClientRect(),space=rect.height,g=frame(rect.width,space,iw,ih,box);canvas.style.width=g.width+'px';canvas.style.height=g.height+'px';plane.style.width=g.planeWidth+'px';plane.style.height=g.planeHeight+'px';plane.style.transform=`translate(${g.x}px,${g.y}px)`;}const observer=new ResizeObserver(update);observer.observe(layout);window.addEventListener('resize',update);window.visualViewport?.addEventListener('resize',update);update();return {destroy(){observer.disconnect();window.removeEventListener('resize',update);window.visualViewport?.removeEventListener('resize',update);}};}
- root.RoomExplore={ZONES,frame,owner,cargo,attach};if(typeof module!=='undefined'&&module.exports)module.exports={ZONES,frame,owner,cargo};
+ function attach(layout,canvas,plane,controls,iw,ih,box){
+  let base=null,zoom=1,panX=0,panY=0,drag=null;const fingers=new Map();
+  function draw(){if(!base)return;const maxX=Math.max(0,(base.width*zoom-base.width)/2),maxY=Math.max(0,(base.height*zoom-base.height)/2);panX=Math.max(-maxX,Math.min(maxX,panX));panY=Math.max(-maxY,Math.min(maxY,panY));plane.style.transform=`translate(${base.x*zoom+(1-zoom)*base.width/2+panX}px,${base.y*zoom+(1-zoom)*base.height/2+panY}px) scale(${zoom})`;}
+  function update(){const rect=layout.getBoundingClientRect(),g=frame(rect.width,rect.height,iw,ih,box);base=g;canvas.style.width=g.width+'px';canvas.style.height=g.height+'px';plane.style.width=g.planeWidth+'px';plane.style.height=g.planeHeight+'px';draw();}
+  function setZoom(value){zoom=Math.max(1,Math.min(2.5,value));if(zoom===1)panX=panY=0;draw();}
+  function wheel(e){if(!e.ctrlKey&&!e.metaKey)return;e.preventDefault();setZoom(zoom*(e.deltaY<0?1.12:1/1.12));}
+  function pointerDown(e){if(e.target.closest('button'))return;canvas.setPointerCapture(e.pointerId);fingers.set(e.pointerId,[e.clientX,e.clientY]);if(fingers.size===1)drag=[e.clientX,e.clientY];}
+  function pointerMove(e){if(!fingers.has(e.pointerId))return;const old=fingers.get(e.pointerId);fingers.set(e.pointerId,[e.clientX,e.clientY]);if(fingers.size===2){const pts=[...fingers.values()];if(pointerMove.distance){const d=Math.hypot(pts[0][0]-pts[1][0],pts[0][1]-pts[1][1]);setZoom(zoom*d/pointerMove.distance);}pointerMove.distance=Math.hypot(pts[0][0]-pts[1][0],pts[0][1]-pts[1][1]);drag=null;}else if(drag&&zoom>1){panX+=e.clientX-old[0];panY+=e.clientY-old[1];draw();}}
+  function pointerUp(e){fingers.delete(e.pointerId);pointerMove.distance=null;drag=null;}
+  canvas.addEventListener('wheel',wheel,{passive:false});canvas.addEventListener('pointerdown',pointerDown);canvas.addEventListener('pointermove',pointerMove);canvas.addEventListener('pointerup',pointerUp);canvas.addEventListener('pointercancel',pointerUp);
+  const observer=new ResizeObserver(update);observer.observe(layout);window.addEventListener('resize',update);window.visualViewport?.addEventListener('resize',update);update();return {zoom:setZoom,getZoom:()=>zoom,destroy(){observer.disconnect();window.removeEventListener('resize',update);window.visualViewport?.removeEventListener('resize',update);canvas.removeEventListener('wheel',wheel);canvas.removeEventListener('pointerdown',pointerDown);canvas.removeEventListener('pointermove',pointerMove);canvas.removeEventListener('pointerup',pointerUp);canvas.removeEventListener('pointercancel',pointerUp);}};
+ }
+ root.RoomExplore={ZONES,PORTRAIT_BOXES,PORTRAIT_SIZES,frame,owner,cargo,attach};if(typeof module!=='undefined'&&module.exports)module.exports={ZONES,PORTRAIT_BOXES,PORTRAIT_SIZES,frame,owner,cargo};
 })(typeof window!=='undefined'?window:globalThis);
