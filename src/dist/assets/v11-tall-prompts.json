@@ -1,0 +1,38 @@
+[
+  {
+    "key": "desk",
+    "args": {
+      "referenced_image_paths": [
+        "C:/Users/Aleks/Documents/ChatGPT/Заброшенная станция/src/dist/assets/luch-desk-v11.png"
+      ],
+      "prompt": "Create a PORTRAIT smartphone version of this exact scene, 9:19 aspect ratio, target1024x2160. Outpaint and reframe as a complete self-contained view; NEVER crop any of the main furniture or the main round porthole. Preserve the same illustration, materials, warm watercolor rice paper and all main objects. Fit the entire original horizontal scene across the central width, then DRAW NEW matching ceiling, wall above, and floor/carpet below to fill the much taller canvas. Do not stretch or distort furniture. Main focal object remains completely visible within x8–92% and y25–72%. Plenty of natural ceiling space at top and floor space at bottom for game UI to be overlaid later. All objects fully inside canvas. No text, UI, robot, people, border. This is a portrait painted room, not a horizontal picture pasted onto a blurry background."
+    }
+  },
+  {
+    "key": "archive",
+    "args": {
+      "referenced_image_paths": [
+        "C:/Users/Aleks/Documents/ChatGPT/Заброшенная станция/src/dist/assets/luch-archive-v11.png"
+      ],
+      "prompt": "Create a PORTRAIT smartphone version of this exact scene, 9:19 aspect ratio, target1024x2160. Outpaint and reframe as a complete self-contained view; NEVER crop any of the main furniture or the main round porthole. Preserve the same illustration, materials, warm watercolor rice paper and all main objects. Fit the entire original horizontal scene across the central width, then DRAW NEW matching ceiling, wall above, and floor/carpet below to fill the much taller canvas. Do not stretch or distort furniture. Main focal object remains completely visible within x8–92% and y25–72%. Plenty of natural ceiling space at top and floor space at bottom for game UI to be overlaid later. All objects fully inside canvas. No text, UI, robot, people, border. This is a portrait painted room, not a horizontal picture pasted onto a blurry background."
+    }
+  },
+  {
+    "key": "window",
+    "args": {
+      "referenced_image_paths": [
+        "C:/Users/Aleks/Documents/ChatGPT/Заброшенная станция/src/dist/assets/luch-window-v11.png"
+      ],
+      "prompt": "Create a PORTRAIT smartphone version of this exact scene, 9:19 aspect ratio, target1024x2160. Outpaint and reframe as a complete self-contained view; NEVER crop any of the main furniture or the main round porthole. Preserve the same illustration, materials, warm watercolor rice paper and all main objects. Fit the entire original horizontal scene across the central width, then DRAW NEW matching ceiling, wall above, and floor/carpet below to fill the much taller canvas. Do not stretch or distort furniture. Main focal object remains completely visible within x8–92% and y25–72%. Plenty of natural ceiling space at top and floor space at bottom for game UI to be overlaid later. All objects fully inside canvas. No text, UI, robot, people, border. This is a portrait painted room, not a horizontal picture pasted onto a blurry background."
+    }
+  },
+  {
+    "key": "rest",
+    "args": {
+      "referenced_image_paths": [
+        "C:/Users/Aleks/Documents/ChatGPT/Заброшенная станция/src/dist/assets/luch-rest-v11.png"
+      ],
+      "prompt": "Create a PORTRAIT smartphone version of this exact scene, 9:19 aspect ratio, target1024x2160. Outpaint and reframe as a complete self-contained view; NEVER crop any of the main furniture or the main round porthole. Preserve the same illustration, materials, warm watercolor rice paper and all main objects. Fit the entire original horizontal scene across the central width, then DRAW NEW matching ceiling, wall above, and floor/carpet below to fill the much taller canvas. Do not stretch or distort furniture. Main focal object remains completely visible within x8–92% and y25–72%. Plenty of natural ceiling space at top and floor space at bottom for game UI to be overlaid later. All objects fully inside canvas. No text, UI, robot, people, border. This is a portrait painted room, not a horizontal picture pasted onto a blurry background."
+    }
+  }
+]

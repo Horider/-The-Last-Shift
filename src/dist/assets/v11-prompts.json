@@ -1,0 +1,66 @@
+[
+  {
+    "key": "hub-tall",
+    "args": {
+      "referenced_image_paths": [
+        "C:/Users/Aleks/Documents/ChatGPT/Заброшенная станция/src/dist/assets/hub-map-tall-v10.png"
+      ],
+      "prompt": "Edit this exact game map. Remove ONLY the tiny cream robot standing inside the bottom docking chamber and its shadow; restore continuous matching floor in that small spot. Preserve every other pixel/layout as closely as possible: all doors, corridors, signage, crate, lighting and proportions. No robot, no people. Keep original dimensions and framing."
+    }
+  },
+  {
+    "key": "hub-wide",
+    "args": {
+      "referenced_image_paths": [
+        "C:/Users/Aleks/Documents/ChatGPT/Заброшенная станция/src/dist/assets/hub-map-wide-v10.png"
+      ],
+      "prompt": "Edit this exact game map. Remove ONLY the tiny cream robot standing inside the bottom docking chamber and its shadow; restore continuous matching floor in that small spot. Preserve every other pixel/layout as closely as possible: all doors, corridors, signage, crate, lighting and proportions. No robot, no people. Keep original dimensions and framing."
+    }
+  },
+  {
+    "key": "desk",
+    "args": {
+      "referenced_image_paths": [
+        "C:/Users/Aleks/Documents/ChatGPT/Заброшенная станция/src/dist/assets/luch-office-wide-v8.png"
+      ],
+      "prompt": "Use reference ONLY for the identity, materials, warm watercolor on rice paper art style and consistent station office design. Create a NEW separate full illustration, NOT a crop or enlargement of reference: a closer independent frontal room view of the COMPLETE work desk with LUCH smiling pale-green monitor, lamp, mug, drawers, visitor chair fully visible INCLUDING ALL wheels, and floor around it. The entire desk, screen and chair within frame with generous margins. Landscape 3:2 canvas, target1536x1024. Fresh detailed drawing, first person camera at a comfortable middle distance. Frame all principal objects completely, 12% breathing room at sides and top/bottom. No UI, readable text, people, robots, labels, watermark. Preserve warm sage/ochre/cream palette."
+    }
+  },
+  {
+    "key": "archive",
+    "args": {
+      "referenced_image_paths": [
+        "C:/Users/Aleks/Documents/ChatGPT/Заброшенная станция/src/dist/assets/luch-office-wide-v8.png"
+      ],
+      "prompt": "Use reference ONLY for the identity, materials, warm watercolor on rice paper art style and consistent station office design. Create a NEW separate full illustration, NOT a crop or enlargement of reference: a closer independent frontal room view of the COMPLETE LEFT archive shelving unit, tall metal cabinet, books, storage boxes, trailing plants, floor and ceiling framing. Entire shelving unit visible from top to bottom, no cropped shelves. Landscape 3:2 canvas, target1536x1024. Fresh detailed drawing, first person camera at a comfortable middle distance. Frame all principal objects completely, 12% breathing room at sides and top/bottom. No UI, readable text, people, robots, labels, watermark. Preserve warm sage/ochre/cream palette."
+    }
+  },
+  {
+    "key": "window",
+    "args": {
+      "referenced_image_paths": [
+        "C:/Users/Aleks/Documents/ChatGPT/Заброшенная станция/src/dist/assets/luch-office-wide-v8.png"
+      ],
+      "prompt": "Use reference ONLY for the identity, materials, warm watercolor on rice paper art style and consistent station office design. Create a NEW separate full illustration, NOT a crop or enlargement of reference: a closer independent frontal view of the COMPLETE round brass porthole and surrounding spaceship wall, blue planet visible through glass, pipes, botanical drawings, plants on a small ledge, floor and ceiling. Entire round window visible with generous wall margins, no cropped rim. Landscape 3:2 canvas, target1536x1024. Fresh detailed drawing, first person camera at a comfortable middle distance. Frame all principal objects completely, 12% breathing room at sides and top/bottom. No UI, readable text, people, robots, labels, watermark. Preserve warm sage/ochre/cream palette."
+    }
+  },
+  {
+    "key": "rest",
+    "args": {
+      "referenced_image_paths": [
+        "C:/Users/Aleks/Documents/ChatGPT/Заброшенная станция/src/dist/assets/luch-office-wide-v8.png"
+      ],
+      "prompt": "Use reference ONLY for the identity, materials, warm watercolor on rice paper art style and consistent station office design. Create a NEW separate full illustration, NOT a crop or enlargement of reference: a closer independent frontal room view of the COMPLETE cozy sofa/bench on the RIGHT of reference, mustard cushion, blue knitted blanket, wooden base, side table, lantern and potted plant. Full sofa including both ends and base, floor and wall around it, no cropped furniture. Landscape 3:2 canvas, target1536x1024. Fresh detailed drawing, first person camera at a comfortable middle distance. Frame all principal objects completely, 12% breathing room at sides and top/bottom. No UI, readable text, people, robots, labels, watermark. Preserve warm sage/ochre/cream palette."
+    }
+  },
+  {
+    "key": "robot",
+    "args": {
+      "referenced_image_paths": [
+        "C:/Users/Aleks/Documents/ChatGPT/Заброшенная станция/src/dist/assets/hub-map-wide-v10.png"
+      ],
+      "transparent_background": true,
+      "prompt": "Create transparent PNG sprite sheet of ONLY the tiny cream robot from bottom of reference, same watercolor rice-paper texture INSIDE robot only. Exactly 8 views of SAME small wheeled service robot, fixed high overhead 2D game camera, robot ROTATES on floor, camera never rotates. Compact cream rounded head and body, dark visor with two cyan eyes, thin antenna, tiny arms and two wheels. Four columns by two rows in precisely equal cells. Row1 LEFT TO RIGHT: north (back facing viewer, driving UP), northeast (rear three-quarter driving UP RIGHT), east (right profile driving RIGHT), southeast (front three-quarter driving DOWN RIGHT). Row2 LEFT TO RIGHT: south (front facing viewer driving DOWN), southwest (front three-quarter driving DOWN LEFT), west (left profile driving LEFT), northwest (rear three-quarter driving UP LEFT). Consistent body size and center within every cell, whole robot entirely within central60% of each cell, feet/wheels baseline consistent. No text, labels, grid lines, environment, backgrounds or cast shadow. True transparent alpha outside all eight figures. Canvas2048x1024."
+    }
+  }
+]
