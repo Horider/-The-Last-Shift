@@ -8,3 +8,5 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .tablet-rotate-note{display:none;position:absolute;left:12%;right:12%;top:49%;transform:translateY(-50%);z-index:12;padding:16px;background:#efe6cfe8;border:1px solid #9faf99;border-radius:10px;text-align:center;font:16px/1.35 Georgia,serif;box-shadow:0 4px 20px #172f2b55;pointer-events:none}.rotate-hint .tablet-rotate-note{display:block}.tablet-rotate-note .en{display:none}html[lang=en] .tablet-rotate-note .ru{display:none}html[lang=en] .tablet-rotate-note .en{display:inline}
 
 .eng-object{position:absolute;border:0;background:none;padding:0;cursor:pointer;z-index:4;min-width:0;min-height:0}.eng-object img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(2px 3px 2px #30251d55);pointer-events:none}.eng-object:focus-visible{outline:2px dashed #f1e5b9}.eng-cargo{width:100%;height:100%;object-fit:contain}
+
+.vise-status{padding:8px 12px;border-radius:6px;background:#efe6cfed;color:#344d48;font-size:12px}

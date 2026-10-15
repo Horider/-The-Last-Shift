@@ -62,6 +62,10 @@
  root.ShiftMobileData['eng_tester-assembled']='assets/eng-tester-assembled-v15.png';
  root.ShiftMobileData['eng_tester-body']='assets/eng-tester-body-v15.png';
  root.ShiftMobileData['eng_tester-module']='assets/eng-tester-module-v15.png';
+ root.ShiftMobileData.eng_leads='assets/eng-leads-v16.png';
+ 
+ root.ShiftMobileData['eng_tester-assembled']='assets/eng-assembled-v16.png';
+ root.ShiftMobileData['eng_tester-module']='assets/eng-module-v16.png';
  if(root.ShiftAssets){for(const room of Object.values(R.ROOMS)){room.image=root.ShiftAssets[room.image];room.clean=root.ShiftAssets[room.clean];}for(const [key,value] of Object.entries(root.ShiftMobileData))if(typeof value==='string'&&value.startsWith('assets/'))root.ShiftMobileData[key]=root.ShiftAssets[value];}
  if(typeof module!=='undefined'&&module.exports)module.exports=root.ShiftMobileData;
 })(typeof window!=='undefined'?window:globalThis);
