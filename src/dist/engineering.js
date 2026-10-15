@@ -6,10 +6,11 @@
  function turn(s){if(s.turns>=3)return false;s.turns++;return true;}
  function assemble(s){if(!s.body||!s.module||!s.leads||s.assembled)return false;s.assembled=true;return true;}
  function render(o){
- const {state:s,game,zone,portrait:p,D,t,inspect,change,approach,test,notify,storeItem,openInventory,inspectTester}=o,fmt=p?'tall':'wide';
+ const {state:s,game,zone,portrait:p,D,t,inspect,change,approach,test,notify,storeItem,openInventory,inspectTester,readManual,sprite}=o,fmt=p?'tall':'wide';
  const asset=n=>D['eng_'+n],pos=(a,b)=>p?b:a;
  let stem=!zone?'overview-clean':zone==='tools'?(s.box?'left-clean':'left-closed'):zone==='right'?(s.turns>=3?'right-empty':'right-clamped'):zone==='drawer'?(s.drawer?'drawer-clean':'drawer-closed'):'table-empty';
  const image=asset(stem+'-'+fmt),commands=[],layers=[];
+ if(!zone||zone==='center'){const box=pos(!zone?[57,60,8,9]:[49,35,12,14],!zone?[56,51,12,6]:[69,47,20,10]);const n=commands.push(()=>readManual(0))-1;layers.push('<button class="eng-object" data-eng="'+n+'" aria-label="Инструкция инженера" style="left:'+box[0]+'%;top:'+box[1]+'%;width:'+box[2]+'%;height:'+box[3]+'%">'+sprite('manual')+'</button>');}
  function button(label,box,fn,art){const n=commands.push(fn)-1;const [x,y,w,h]=box;layers.push('<button class="'+(art?'eng-object':'native-item')+'" data-eng="'+n+'" aria-label="'+label+'" style="left:'+x+'%;top:'+y+'%;width:'+w+'%;height:'+h+'%">'+(art?'<img alt="" src="'+asset(art)+'">':'')+'</button>');}
  function available(id){const it=game.items.find(i=>i.id===id);return it&&!it.shipped&&!game.inventory?.includes(id)&&game.carry!==id;}
  function item(id,box){if(available(id))button(game.items.find(i=>i.id===id).name,box,()=>inspect(id),sprites[id]);}
