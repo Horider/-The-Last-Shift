@@ -6,25 +6,25 @@
  function turn(s){if(s.turns>=3)return false;s.turns++;return true;}
  function assemble(s){if(!s.body||!s.module||!s.leads||s.assembled)return false;s.assembled=true;return true;}
  function render(o){
- const {state:s,game,zone,portrait:p,D,t,inspect,change,approach,test,notify}=o,fmt=p?'tall':'wide';
+ const {state:s,game,zone,portrait:p,D,t,inspect,change,approach,test,notify,storeItem}=o,fmt=p?'tall':'wide';
  const asset=n=>D['eng_'+n],pos=(a,b)=>p?b:a;
- let stem=!zone?'overview-clean':zone==='tools'?(s.box?'left-clean':'left-closed'):zone==='right'?(s.turns<3?'right-clamped':'right-empty'):zone==='drawer'?(s.drawer?'drawer-clean':'drawer-closed'):'table-empty';
+ let stem=!zone?'overview-clean':zone==='tools'?(s.box?'left-clean':'left-closed'):zone==='right'?(s.module?'right-empty':'right-clamped'):zone==='drawer'?(s.drawer?'drawer-clean':'drawer-closed'):'table-empty';
  const image=asset(stem+'-'+fmt),commands=[],layers=[];
  function button(label,box,fn,art){const n=commands.push(fn)-1;const [x,y,w,h]=box;layers.push('<button class="'+(art?'eng-object':'native-item')+'" data-eng="'+n+'" aria-label="'+label+'" style="left:'+x+'%;top:'+y+'%;width:'+w+'%;height:'+h+'%">'+(art?'<img alt="" src="'+asset(art)+'">':'')+'</button>');}
- function available(id){const it=game.items.find(i=>i.id===id);return it&&!it.shipped&&game.carry!==id;}
+ function available(id){const it=game.items.find(i=>i.id===id);return it&&!it.shipped&&!game.inventory?.includes(id)&&game.carry!==id;}
  function item(id,box){if(available(id))button(game.items.find(i=>i.id===id).name,box,()=>inspect(id),sprites[id]);}
- function crank(){if(turn(s)){game.history.push({event:'vise-turn',turn:s.turns});change();notify(t('Поворот рычага: ','Handle turn: ')+s.turns+'/3');}}
- function take(id){if(collect(s,id)){game.history.push({event:'engineering-collect',item:id});notify(t('Находка перенесена на центральный стол.','The find is now on the central worktop.'));change();}}
+ function crank(){if(turn(s)){game.history.push({event:'vise-turn',turn:s.turns});change();notify(t('Рычаг повернулся.','The handle turned.'));}}
+ function take(id){if(collect(s,id)){game.history.push({event:'engineering-collect',item:id});storeItem(id);notify(t('Предмет в инвентаре.','Item stored.'));change();}}
  if(!zone){
  const points=p?[[18,45],[86,48],[32,58],[50,49]]:[[17,51],[86,55],[32,79],[49,55]];
  ['tools','right','drawer','center'].forEach((id,i)=>{const [x,y]=points[i];const n=commands.push(()=>approach(id))-1;layers.push('<button class="zone-entry" data-eng="'+n+'" aria-label="'+t('Подойти к зоне ','Approach area ')+(i+1)+'" style="left:'+x+'%;top:'+y+'%">'+(i+1)+'</button>')});
  item('battery',pos([40,46,8,12],[40,44,10,6]));item('blueBattery',pos([51,46,8,12],[52,44,10,6]));
  }else if(zone==='tools'){
  button(t(s.box?'Закрыть красный ящик':'Открыть красный ящик',s.box?'Close red toolbox':'Open red toolbox'),pos([12,21,44,42],[6,36,59,26]),()=>{s.box=!s.box;change()});
- if(s.box&&!s.found.includes('empty'))button(t('Достать красный аккумулятор','Retrieve red battery'),pos([26,35,20,22],[25,43,30,12]),()=>take('empty'),sprites.empty);
+ if(s.box&&!s.found.includes('empty'))button(t('Достать красный аккумулятор','Retrieve red battery'),pos([26,31,20,22],[25,39,30,12]),()=>take('empty'),sprites.empty);layers.push('<style>.eng-object[aria-label="Достать красный аккумулятор"],.eng-object[aria-label="Retrieve red battery"]{clip-path:inset(0 0 18% 0);filter:brightness(.82)}</style>');
  if(available('flashlight'))button(t('Осмотреть фонарь','Inspect flashlight'),pos([50,46,7,19],[52,53,9,12]),()=>inspect('flashlight'));
  }else if(zone==='right'){
- if(!s.module)button(t(s.turns===3?'Забрать насадку':'Насадка зажата',s.turns===3?'Take attachment':'Attachment clamped'),pos([49,29,28,25],[37,43,43,15]),()=>s.turns===3?take('module'):notify(t('Нажми три раза на рычаг тисков.','Turn the vise handle three times.')),sprites.module);
+ if(!s.module)button(t(s.turns===3?'Забрать насадку':'Насадка зажата',s.turns===3?'Take attachment':'Attachment clamped'),pos([54,31,16,16],[50,42,29,8]),()=>s.turns===3?take('module'):notify(t('Деталь зажата.','The part is clamped.')));
  if(s.turns<3)button(t('Повернуть рычаг тисков','Turn vise handle'),pos([53,76,38,16],[40,66,57,10]),crank);
  if(available('memory')&&game.phase==='epilogue')button(t('Память ЛУЧа','LUCH memory'),pos([12,58,25,13],[0,54,30,7]),()=>inspect('memory'));
  }else if(zone==='drawer'){
@@ -34,18 +34,13 @@
  if(!s.body)button(t('Достать корпус тестера','Retrieve tester body'),pos([56,37,26,19],[46,41,37,10]),()=>take('body'),sprites.body);}
  }else{
  item('battery',pos([13,46,20,22],[8,48,30,12]));item('blueBattery',pos([31,46,20,22],[38,48,30,12]));
- if(s.found.includes('empty'))item('empty',pos([13,59,20,22],[8,63,30,12]));
- if(s.found.includes('powerbank'))item('powerbank',pos([31,59,20,22],[38,63,30,12]));
- if(s.body)button(t(s.assembled?'Проверить заряд':'Корпус тестера',s.assembled?'Test charge':'Tester body'),pos([59,46,37,34],[53,61,45,19]),()=>s.assembled?test():notify(t('Нужны насадка из тисков и провода из ящика.','Find the attachment in the vise and leads in the drawer.')),sprites[s.assembled?'assembled':'body']);
- if(s.leads&&!s.assembled)button(t('Провода тестера','Tester leads'),pos([66,65,25,18],[5,77,34,11]),()=>notify(t('Провода готовы к сборке.','Leads ready for assembly.')),sprites.leads);
- if(s.module&&!s.assembled)button(t('Измерительный модуль','Measuring module'),pos([63,43,28,20],[64,52,34,12]),()=>notify(t('Соедини модуль с корпусом тестера.','Connect the module to the tester body.')),sprites.module);
  }
  const action=(label,fn)=>{let n=commands.push(fn)-1;return '<button data-eng="'+n+'">'+label+'</button>'};
  let toolbar=zone?action(t('← Общий план','← Room overview'),()=>approach(null)):'';
  if(zone==='tools')toolbar+=action(t(s.box?'Закрыть ящик':'Открыть ящик',s.box?'Close toolbox':'Open toolbox'),()=>{s.box=!s.box;change()});
  if(zone==='drawer')toolbar+=action(t(s.drawer?'Закрыть ящик':'Открыть ящик',s.drawer?'Close drawer':'Open drawer'),()=>{s.drawer=!s.drawer;change()});
- if(zone==='right'&&!s.module)toolbar+='<span class=vise-status>'+t(s.turns===3?'Насадка свободна':'Нажми на рычаг',s.turns===3?'Attachment released':'Tap the handle')+' · '+s.turns+'/3</span>';
- if(zone==='center')toolbar+=action(t(s.assembled?'Проверить заряд':'Собрать тестер',s.assembled?'Test charge':'Assemble tester'),()=>{if(s.assembled)test();else if(assemble(s)){game.history.push({event:'assemble-tester'});change();}else notify(t('Найди корпус и провода в нижнем ящике, насадку освободи из тисков.','Find body and leads in the drawer; release the attachment from the vise.'))});
+
+
  if(zone)toolbar+='<button id="scene-zoom-out">−</button><button id="scene-zoom-in">+</button>';
  const screen=document.getElementById('screen');screen.classList.add('explore-screen');screen.innerHTML='<h1 class="screen-title">'+t('Инженерный кабинет','Engineering workshop')+'</h1><div class="explore-layout" id="explore-layout"><div class="explore-canvas" id="explore-canvas"><div class="explore-plane" id="explore-plane"><img src="'+image+'" alt="'+t('Инженерный кабинет','Engineering workshop')+'">'+layers.join('')+'</div></div><div class="explore-controls" id="explore-controls"><div class="explore-toolbar">'+toolbar+'</div></div></div>';
  screen.querySelectorAll('[data-eng]').forEach(b=>b.onclick=commands[+b.dataset.eng]);

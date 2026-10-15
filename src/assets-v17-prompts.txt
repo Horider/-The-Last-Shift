@@ -1,0 +1,6 @@
+Image generation: built-in image_gen, 2026-10-15.
+Red rear PNG: src/dist/assets/battery-back-red-v17.png
+Prompt: Create BACK VIEW of the referenced worn red battery, same proportions, watercolor on rice paper, two top terminals, straight-on rear, true transparent background, screws and single centered dark charge-test indicator; no lightning, text or environment.
+Blue rear PNG: src/dist/assets/battery-back-blue-v17.png
+Prompt: Change only red paint of red rear reference to worn cobalt blue; preserve silhouette, terminals, centered dark indicator, scratches, square composition and transparency.
+Charge illumination is an interactive UI layer anchored to the PNG indicator, driven by the per-game charge assignment.

@@ -27,7 +27,7 @@
  C.ORDERS[2].accept.push('compass');C.ORDERS[2].replies.compass='Резервный компас капитана сохранён. Он доверял ему после калибровки.';
  C.ORDERS[3].accept.push('algae');C.ORDERS[3].replies.algae='Живой коллектив водорослей эвакуирован. Один билет на всех.';
  C.ORDERS[1].hint='Нужно что-то с кухни, что питает людей: еда или кофе. Пустая кружка не подходит.';
- C.ORDERS[0].hint='Собери тестер: корпус в нижнем ящике, измерительный модуль в тисках. Дополнительные аккумуляторы лежат в обоих ящиках. Проверяй их на центральном столе.';
+ C.ORDERS[0].hint='Нужен красный аварийный аккумулятор с зарядом не ниже 50%.';
  C.ORDERS[2].hint='Проверь владельца и назначение. Не всякая вещь в каюте принадлежит капитану.';
  C.ORDERS[3].hint='Проверь, живое ли это сейчас и можно ли перенести. Цвет листьев сам по себе ничего не доказывает.';
  root.ShiftMobileData={luchDeskTall:'assets/luch-desk-tall-v12.png',luchArchiveTall:'assets/luch-archive-tall-v12.png',luchWindowTall:'assets/luch-window-tall-v12.png',luchRestTall:'assets/luch-rest-tall-v12.png',robot:'assets/robot-eight-v11.png',luchDesk:'assets/luch-desk-v12.png',luchArchive:'assets/luch-archive-v12.png',luchWindow:'assets/luch-window-v12.png',luchRest:'assets/luch-rest-v12.png',extraIds:extra.map(i=>i[0]),hub:'assets/hub-map-tall-v11.png',luch:'assets/luch-office-tall-v12.png',luchWide:'assets/luch-office-wide-v8.png',kitchenTall:'assets/kitchen-overview-tall-v12.png',captainTall:'assets/captain-overview-tall-v12.png',labTall:'assets/lab-overview-tall-v12.png',technicalTall:'assets/technical-overview-tall-v14.png',technicalDrawerOpenWide:'assets/technical-drawer-open-wide-v14.png',technicalDrawerOpenTall:'assets/technical-drawer-open-tall-v14.png',cargoOld:'assets/items-v2.png',cargoExtra:'assets/extras-v5.png',crate:'assets/crate-tall-v7.png',hubWide:'assets/hub-map-wide-v11.png',crateWide:'assets/crate-wide-v7.png'};
@@ -66,6 +66,8 @@
  
  root.ShiftMobileData['eng_tester-assembled']='assets/eng-assembled-v16.png';
  root.ShiftMobileData['eng_tester-module']='assets/eng-module-v16.png';
+ root.ShiftMobileData.batteryBackRed='assets/battery-back-red-v17.png';
+ root.ShiftMobileData.batteryBackBlue='assets/battery-back-blue-v17.png';
  if(root.ShiftAssets){for(const room of Object.values(R.ROOMS)){room.image=root.ShiftAssets[room.image];room.clean=root.ShiftAssets[room.clean];}for(const [key,value] of Object.entries(root.ShiftMobileData))if(typeof value==='string'&&value.startsWith('assets/'))root.ShiftMobileData[key]=root.ShiftAssets[value];}
  if(typeof module!=='undefined'&&module.exports)module.exports=root.ShiftMobileData;
 })(typeof window!=='undefined'?window:globalThis);

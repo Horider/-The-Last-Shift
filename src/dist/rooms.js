@@ -19,7 +19,7 @@
   toy:{room:'captain',x:80,y:48,w:8.5,atlas:8},
   memory:{room:'technical',x:70,y:55,w:7.4,atlas:9}
  };
- function visible(s,room){return s.items.filter(i=>PLACEMENTS[i.id].room===room&&!i.shipped&&s.carry!==i.id&&(i.id!=='memory'||s.phase==='epilogue')&&(s.phase!=='epilogue'||i.id==='memory'));}
+ function visible(s,room){return s.items.filter(i=>PLACEMENTS[i.id].room===room&&!i.shipped&&!s.inventory?.includes(i.id)&&s.carry!==i.id&&(i.id!=='memory'||s.phase==='epilogue')&&(s.phase!=='epilogue'||i.id==='memory'));}
  function returnHome(s){if(!s.carry)return false;const p=PLACEMENTS[s.carry];return root.ShiftCore.drop(s,p.x,p.y);}
  const BOUNDS={battery:[25.5,38.4,4.1,9.5],empty:[49.5,38.6,4.6,9.6],coffee:[28.9,42.2,7.8,14.8],ration:[64.7,47.2,4.4,10],map:[20.8,47,14.6,7.4],photo:[40.7,36.6,4.8,9.6],plant:[22.2,29.7,7.3,11.6],plastic:[67.7,34.6,8.6,15.2],toy:[83,31.6,8,10.8],memory:[67.2,48,8.8,5.8]};
  for(const [id,box] of Object.entries(BOUNDS)){const p=PLACEMENTS[id];p.box=box;p.x=box[0]+box[2]/2;p.y=box[1]+box[3]/2;}
