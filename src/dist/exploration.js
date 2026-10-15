@@ -21,10 +21,10 @@
  z('habitat','Террариум и культуры','Terrarium and cultures',[59,12,41,66],['plant','plastic','algae'],'Живое растение, макет и культура водорослей соседствуют у террариума. Справа лежат книга и чашка Петри.','A living plant, a model and an algae culture share the space by the terrarium. A book and Petri dish lie on the right.')
  ],
  technical:[
- z('tools','Инструменты','Tools',[0,22,22,50],['flashlight'],'Фонарь стоит среди инструмента. Красный корпус и хороший заряд не превращают его в аварийную батарею станции.','A flashlight stands among the tools. A red case and good charge do not make it the station emergency battery.'),
- z('power','Аварийное питание','Emergency power',[22,25,42,50],['battery','empty','powerbank'],'Два почти одинаковых красных аккумулятора и жёлтый планшетный зарядник. Проверяй назначение и заряд каждого отдельно.','Two almost identical red batteries and a yellow tablet power bank. Check the purpose and charge of each one.'),
- z('diagnostics','Диагностический пост','Diagnostics',[47,7,29,44],[],'Монитор и контрольные приборы. Последняя проверка показала: станция устала, но старается.','A monitor and diagnostic instruments. The last check showed that the station is tired but trying.'),
- z('modules','Правый верстак','Right-hand bench',[60,24,40,55],['blueBattery','memory'],'Здесь лежат синий аккумулятор и съёмная память. Доступ к памяти ЛУЧа откроется только после поручений.','A blue battery and removable memory sit here. LUCH memory becomes accessible after the assignments.')
+ z('tools','Инструменты слева','Left-hand tools',[0,22,24,50],['flashlight'],'Фонарь стоит среди инструмента. Красный корпус ещё не делает его аварийной батареей станции.','A flashlight stands among the tools. A red case does not make it the station emergency battery.'),
+ z('right','Верстак у окна','Window workbench',[68,22,32,58],['blueBattery','memory'],'У иллюминатора стоят лампа и тиски. Рядом — синий аккумулятор и съёмная память ЛУЧа.','A lamp and vise sit beneath the porthole, beside a blue battery and LUCH removable memory.'),
+ z('drawer','Нижний ящик','Lower drawer',[20,63,48,34],[],'Широкий ящик под верстаком. Пока внутри пусто; позже здесь появятся инструменты.','A wide drawer beneath the workbench. Empty for now; tools will come later.'),
+ z('center','Центральный стол','Central worktop',[30,23,42,51],['battery','empty','powerbank'],'Два красных аккумулятора и жёлтый зарядник лежат рядом с тестером. Сначала проверь заряд тестером, потом выбирай.','Two red batteries and a yellow power bank sit by a tester. Check the charge before choosing.')
  ],
  luch:[
  z('desk','Рабочий стол ЛУЧа','LUCH desk',[27,18,41,40],[],'Собственный стол, лампа и улыбающийся монитор. Здесь ЛУЧ выдаёт поручения и терпеливо отвечает на вопросы.','A private desk, lamp and smiling monitor. LUCH gives assignments and patiently answers questions here.'),
@@ -39,7 +39,7 @@
   kitchen:{stove:[0,35,25,26],coffee:[23,37,28,18],shelves:[20,14,52,27],sink:[62,36,38,30]},
   captain:{navigation:[0,28,58,24],personal:[36,30,39,20],wall:[50,5,40,26],berth:[67,26,33,42]},
   lab:{left:[0,29,30,30],shelves:[28,25,33,26],bench:[37,39,26,20],habitat:[59,20,41,40]},
-  technical:{tools:[0,23,33,34],power:[32,32,35,17],diagnostics:[40,17,29,25],modules:[66,27,34,34]}
+  technical:{tools:[0,23,33,34],right:[68,29,32,28],drawer:[15,46,48,15],center:[32,31,35,21]}
  };
  const PORTRAIT_SIZES={luch:[852,1846],kitchen:[863,1823],captain:[863,1823],lab:[862,1824],technical:[863,1823]};
  // Every approach is its own illustration in both orientations. Hotspots are
@@ -48,13 +48,13 @@
   kitchen:{stove:[863,1823],coffee:[863,1822],shelves:[863,1823],sink:[862,1824]},
   captain:{navigation:[864,1821],personal:[863,1823],wall:[863,1823],berth:[863,1823]},
   lab:{left:[863,1823],shelves:[863,1823],bench:[863,1823],habitat:[863,1823]},
-  technical:{tools:[863,1823],power:[863,1823],diagnostics:[863,1822],modules:[863,1823]}
+  technical:{tools:[863,1823],right:[910,1729],drawer:[911,1727],center:[912,1725]}
  };
  const DETAIL_HOTSPOTS={
   kitchen:{coffee:{coffee:[[41,42,22,24],[42,42,30,16]],thermos:[[16,36,13,26],[10,28,19,27]]},shelves:{mug:[[35,38,18,22],[40,18,23,17]]},sink:{coffeeTin:[[17,42,18,21],[15,40,22,16]],ration:[[36,60,16,14],[23,49,25,15]]}},
   captain:{navigation:{map:[[27,57,36,17],[34,39,45,18]],compass:[[13,64,17,14],[25,49,18,12]]},personal:{photo:[[53,32,18,23],[43,30,25,15]],logbook:[[29,53,30,18],[20,41,45,17]]},wall:{postcard:[[68,18,19,26],[67,22,26,19]]},berth:{toy:[[63,35,18,25],[46,34,24,18]]}},
   lab:{shelves:{mossJar:[[57,31,13,23],[56,34,17,17]]},bench:{seeds:[[40,61,19,19],[39,56,27,14]]},habitat:{plant:[[34,36,23,29],[40,34,23,22]],plastic:[[85,12,14,29],[81,22,18,22]],algae:[[54,49,12,20],[61,45,15,17]]}},
-  technical:{tools:{flashlight:[[8,38,12,22],[13,34,17,16]]},power:{battery:[[30,37,17,19],[24,33,25,17]],empty:[[49,37,17,19],[50,33,25,17]],powerbank:[[36,62,26,12],[27,51,48,11]]},modules:{blueBattery:[[34,34,18,23],[32,33,25,19]],memory:[[44,62,16,11],[42,47,23,10]]}}
+  technical:{tools:{flashlight:[[8,38,12,22],[13,34,17,16]]},right:{blueBattery:[[64,49,10,17],[86,51,13,11]],memory:[[41,69,16,12],[61,64,20,9]]},center:{battery:[[25,44,13,24],[23,48,16,17]],empty:[[56,44,13,24],[37,48,16,17]],powerbank:[[57,65,26,18],[19,62,29,13]]}}
  };
  function detail(room,zone,portrait){const size=DETAIL_SIZES[room]?.[zone];if(!size)return null;return {key:`${room}_${zone}_${portrait?'tall':'wide'}`,size:portrait?size:[1536,1024]};}
  function hotspot(room,zone,item,portrait){return DETAIL_HOTSPOTS[room]?.[zone]?.[item]?.[portrait?1:0]||null;}
