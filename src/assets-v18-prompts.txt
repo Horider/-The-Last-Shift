@@ -1,0 +1,4 @@
+Engineering overview state variants, generated with imagegen.
+References: eng-overview-clean-wide-v15.png and eng-overview-clean-tall-v15.png respectively.
+Edit the reference without changing the camera, framing, lighting, materials or surrounding objects. Open the red toolbox lid on the left; pull the large lower drawer toward the viewer, showing an empty worn interior; release the green vise jaws on the right and remove the clamped module. Keep the central worktop empty for game sprites. Preserve all other details and watercolor texture. No UI or text.
+Outputs: src/dist/assets/eng-overview-open-wide-v18.png and eng-overview-open-tall-v18.png. Independent clipped layers show each state separately.

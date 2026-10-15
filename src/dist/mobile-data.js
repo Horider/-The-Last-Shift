@@ -68,6 +68,8 @@
  root.ShiftMobileData['eng_tester-module']='assets/eng-module-v16.png';
  root.ShiftMobileData.batteryBackRed='assets/battery-back-red-v17.png';
  root.ShiftMobileData.batteryBackBlue='assets/battery-back-blue-v17.png';
+ root.ShiftMobileData['eng_overview-open-wide']='assets/eng-overview-open-wide-v18.png';
+ root.ShiftMobileData['eng_overview-open-tall']='assets/eng-overview-open-tall-v18.png';
  if(root.ShiftAssets){for(const room of Object.values(R.ROOMS)){room.image=root.ShiftAssets[room.image];room.clean=root.ShiftAssets[room.clean];}for(const [key,value] of Object.entries(root.ShiftMobileData))if(typeof value==='string'&&value.startsWith('assets/'))root.ShiftMobileData[key]=root.ShiftAssets[value];}
  if(typeof module!=='undefined'&&module.exports)module.exports=root.ShiftMobileData;
 })(typeof window!=='undefined'?window:globalThis);
