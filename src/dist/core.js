@@ -19,7 +19,7 @@
     {title:'Последний сотрудник',text:'Эвакуируйте последнего живого обитателя лаборатории. Переносного.',accept:['plant'],hint:'У настоящего растения есть живая земля и листья. Слово «вечность» на этикетке ещё не признак жизни.',intro:'В лаборатории остался сотрудник. Ни одного прогула за семь лет. Даже в отпуск не просился.',replies:{plant:'Сотрудник Мох эвакуирован. Лучшему сотруднику положено место у окна.'}}
   ];
   function createState(){return {phase:'intro', remaining:300,orderIndex:0,carry:null,items:ITEMS.map(i=>({...i,shipped:false})),results:[],errors:[0,0,0,0],hints:[false,false,false,false],saved:[],history:[],rescued:false,bumps:0};}
-  function currentOrder(s){const o=ORDERS[s.orderIndex]||null;if(s.orderIndex===0&&s.batteryCharges){const accept=['battery','empty','powerbank'].filter(id=>s.batteryCharges[id]>=50);return {...o,accept,replies:Object.fromEntries(accept.map(id=>[id,'Аварийное питание принято. Заряд '+s.batteryCharges[id]+'%.']))};}return o;}
+  function currentOrder(s){const o=ORDERS[s.orderIndex]||null;if(s.orderIndex===0&&s.batteryCharges){const accept=['battery','empty','powerbank'].filter(id=>s.knowledge?s.batteryCharges[id]>0&&s.batteryCharges[id]<50:s.batteryCharges[id]>=50);return {...o,accept,replies:Object.fromEntries(accept.map(id=>[id,'Аварийное питание принято. Заряд '+s.batteryCharges[id]+'%.']))};}return o;}
   function item(s,id){return s.items.find(i=>i.id===id);}
   function start(s){if(s.phase==='intro')s.phase='playing';}
   function pickup(s,id){const it=item(s,id);if(!it||it.shipped||s.carry||!['playing','epilogue'].includes(s.phase)||(id==='memory'&&s.phase!=='epilogue')||(s.phase==='epilogue'&&id!=='memory'))return false;s.carry=id;return true;}

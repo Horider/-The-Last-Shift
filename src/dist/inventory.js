@@ -4,7 +4,7 @@
  function initialize(s,rng=Math.random){
   s.inventory=[];s.table=['battery','blueBattery'];s.canFlipBattery=false;s.emptyBatteries=[];const values=[86,28,0];for(let i=values.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[values[i],values[j]]=[values[j],values[i]];}
   s.batteryCharges={blueBattery:92,...Object.fromEntries(RED.map((id,i)=>[id,values[i]]))};
-  for(const id of [...RED,'blueBattery']){const it=s.items.find(x=>x.id===id);if(it){it.description=(id==='blueBattery'?'Синий':'Красный')+' аварийный аккумулятор. Металлический корпус с двумя клеммами.';it.facts=[id==='blueBattery'?'Синий':'Красный','Аварийный'];}}
+  for(const id of [...RED,'blueBattery']){const it=s.items.find(x=>x.id===id);if(it){const blue=id==='blueBattery';it.name=blue?'Синий аккумулятор':'Красный аккумулятор';it.description=(blue?'Синий':'Красный')+' аккумулятор. Металлический корпус с двумя клеммами. Назначение требует уточнения по документации станции.';it.facts=[blue?'Синий':'Красный','Назначение не установлено'];}}
   return s;
  }
  function add(s,id){if(!['playing','epilogue'].includes(s.phase)||s.inventory.includes(id)||s.inventory.length>=6)return false;const it=s.items.find(x=>x.id===id);if(it?.shipped||!it&&!PARTS.includes(id)&&id!=='assembled')return false;s.inventory.push(id);s.table=s.table.filter(x=>x!==id);return true;}

@@ -68,8 +68,8 @@
  root.ShiftMobileData['eng_tester-module']='assets/eng-module-v16.png';
  root.ShiftMobileData.batteryBackRed='assets/battery-back-red-v17.png';
  root.ShiftMobileData.batteryBackBlue='assets/battery-back-blue-v17.png';
- root.ShiftMobileData['eng_overview-open-wide']='assets/eng-overview-open-wide-v18.png';
- root.ShiftMobileData['eng_overview-open-tall']='assets/eng-overview-open-tall-v18.png';
+ root.ShiftMobileData['eng_overview-open-wide']='assets/eng-overview-open-wide-v21.png';
+ root.ShiftMobileData['eng_overview-open-tall']='assets/eng-overview-open-tall-v21.png';
  root.ShiftMobileData.clueAtlas='assets/clues-v19.png';
  root.ShiftMobileData.cupboardAtlas='assets/cupboard-v19.png';
  root.ShiftMobileData['eng_overview-clean-wide']='assets/eng-overview-clean-wide-v20.png';
