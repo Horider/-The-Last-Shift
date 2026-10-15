@@ -6,29 +6,25 @@
  z('stove','Электрическая плита','Electric hob',[0,40,24,60],[],'Герметичная индукционная поверхность. Чайник закреплён: в космосе даже чай любит улетать. Открытого огня здесь нет.','A sealed induction hob. The kettle is secured: in space even tea wants to fly away. No open flame here.'),
  z('coffee','Кофейная станция','Coffee station',[10,26,34,44],['coffee','thermos'],'Кофеварка, термос и тесный уголок рабочей поверхности. Здесь начиналась каждая утренняя вахта.','A coffee maker, thermos and a crowded worktop. Every morning watch started here.'),
  z('shelves','Верхние полки','Upper shelves',[20,0,60,28],['mug'],'На полках стоят похожие кружки и банки. Одна кружка принадлежала капитану, но принадлежность ещё не делает её источником энергии.','Similar mugs and tins line the shelves. One mug belonged to the captain; ownership does not make it a source of energy.'),
- z('sink','Раковина','Sink',[73,27,27,47],['coffeeTin'],'Кран, сушилка и банки вдоль бортика. Пакет с надписью «кофе» легко принять за обычную кухонную мелочь.','A tap, drying rack and tins along the rim. A coffee container can look like ordinary kitchen clutter.'),
- z('stores','Запасы и шкафчики','Supplies and cupboards',[56,40,24,60],['ration'],'Над шкафчиками оставили последний паёк. Шкафчики закрыты: станция готовилась к долгому тихому отдыху.','The last ration was left above the cupboards. Their doors are shut: the station was preparing for a long quiet rest.')
+ z('sink','Раковина и запасы','Sink and supplies',[63,27,37,60],['coffeeTin','ration'],'Кран, сушилка, кофе и последний паёк экипажа стоят рядом. Шкафчики закрыты: станция готовилась к долгому тихому отдыху.','The tap, drying rack, coffee and last crew ration sit together. The cupboards are shut as the station prepares for a long rest.')
  ],
  captain:[
  z('navigation','Навигационный стол','Navigation desk',[10,34,35,35],['map','compass'],'Разложенный маршрут и маленький резервный компас. Капитан отмечал дорогу домой от руки.','A route chart and small backup compass. The captain marked the way home by hand.'),
  z('personal','Личные вещи','Personal belongings',[36,25,30,36],['photo','logbook'],'Фотография стоит рядом с общим журналом станции. В этой комнате не всё автоматически становится личной вещью капитана.','A photograph sits beside the station log. Not everything in this cabin belongs personally to the captain.'),
  z('wall','Стена с открытками','Postcard wall',[30,0,40,26],['postcard'],'Красивые звёзды на открытке и тихие заметки на стене. Не каждая картинка показывает настоящий курс.','Pretty stars on a postcard and quiet wall notes. Not every picture shows a real course.'),
- z('souvenirs','Кровать и талисман','Berth and mascot',[74,18,26,45],['toy'],'Мягкий космонавт устроился на одеяле. Отважный сотрудник, но дыхание у него исключительно декоративное.','A plush astronaut sits on the blanket. A brave employee, whose breathing is entirely decorative.'),
- z('chair','Кресло и сундук','Chair and chest',[0,60,65,40],[],'На кресле осталось пальто, а на сундуке — книги. Капитан был уверен, что вернётся сюда ещё раз.','A coat remains on the chair, with books on the chest. The captain expected to return here once more.')
+ z('berth','Кровать и талисман','Berth and mascot',[74,18,26,55],['toy'],'Мягкий космонавт устроился на одеяле. Отважный сотрудник, но дыхание у него исключительно декоративное.','A plush astronaut sits on the blanket. A brave employee, whose breathing is entirely decorative.')
  ],
  lab:[
- z('plants','Зелёный уголок','Plant corner',[13,19,24,40],['plant'],'У живого сотрудника влажная земля и настоящие листья. Переносной горшок подготовлен для эвакуации.','The living employee has damp soil and real leaves. Its portable pot is ready for evacuation.'),
- z('samples','Шкаф образцов','Specimen cabinet',[35,22,29,32],['mossJar'],'Баночки похожи друг на друга. Зелёный цвет ещё не гарантирует, что образец жив.','The specimen jars look alike. Green colour does not guarantee that a specimen is alive.'),
- z('bench','Рабочий стол','Work bench',[27,50,40,38],['seeds'],'На столе лежит учебный пакет семян. Перед эвакуацией стоит прочитать, что с ними сделали.','A teaching seed packet lies on the bench. Before evacuation, read what was done to those seeds.'),
- z('terrarium','Террариум и макеты','Terrarium and models',[61,23,19,37],['plastic'],'Рядом с зеленью есть демонстрационные модели. Они выглядят бодро и никогда не просят воды.','Demonstration models sit beside the greenery. They look healthy and never ask for water.'),
- z('glassware','Стеклянные культуры','Glass cultures',[77,31,23,38],['algae'],'Герметичные колбы, небольшие культуры и приборы. Некоторые живые сотрудники помещаются в одной ладони.','Sealed flasks, small cultures and instruments. Some living employees fit in one hand.')
+ z('left','Пробирки и микроскоп','Test tubes and microscope',[0,26,28,57],[],'Слева стоят микроскоп и пробирки; на столе лежат книга, лупа и пинцет. Здесь удобно сверять похожие образцы.','The microscope and test tubes are on the left, with a book, magnifier and tweezers on the bench. This is where similar specimens are compared.'),
+ z('shelves','Полки с образцами','Specimen shelves',[26,17,30,53],['mossJar'],'За стеклянными банками — ящики и ботанические плакаты. Зелёный мох в консервирующей жидкости уже не живой.','Behind the glass jars are specimen drawers and botanical posters. Green moss in preservative is no longer alive.'),
+ z('bench','Книга и семена','Book and seeds',[34,56,34,30],['seeds'],'На столе по центру лежат открытая книга, пробирка и учебный пакет семян. Прочитай, что сделали с семенами.','At the center of the worktop lie an open book, a test tube and a teaching seed packet. Read what was done to the seeds.'),
+ z('habitat','Террариум и культуры','Terrarium and cultures',[59,12,41,66],['plant','plastic','algae'],'Живое растение, макет и культура водорослей соседствуют у террариума. Справа лежат книга и чашка Петри.','A living plant, a model and an algae culture share the space by the terrarium. A book and Petri dish lie on the right.')
  ],
  technical:[
  z('tools','Инструменты','Tools',[0,22,22,50],['flashlight'],'Фонарь стоит среди инструмента. Красный корпус и хороший заряд не превращают его в аварийную батарею станции.','A flashlight stands among the tools. A red case and good charge do not make it the station emergency battery.'),
- z('power','Аварийное питание','Emergency power',[22,25,38,40],['battery','empty'],'Два почти одинаковых красных аккумулятора. Проверяй заряд каждого отдельно: оптимизм электричество не заменяет.','Two almost identical red batteries. Check each charge separately: optimism does not replace electricity.'),
- z('computer','Диагностический пост','Diagnostics',[47,7,29,44],[],'Монитор и контрольные приборы. Последняя проверка показала: станция устала, но старается.','A monitor and diagnostic instruments. The last check showed that the station is tired but trying.'),
- z('modules','Правый верстак','Right-hand bench',[60,24,40,48],['blueBattery','memory'],'Здесь лежат резервные компоненты и съёмная память. Доступ к памяти ЛУЧа откроется только после поручений.','Spare components and removable memory are kept here. LUCH memory becomes accessible after the assignments.'),
- z('chargers','Кабели и зарядники','Cables and chargers',[44,45,23,44],['powerbank'],'Планшетный зарядник и кабели лежат на рабочей поверхности. У каждого источника питания своё назначение.','A tablet power bank and cables lie on the bench. Every power source has its own purpose.')
+ z('power','Аварийное питание','Emergency power',[22,25,42,50],['battery','empty','powerbank'],'Два почти одинаковых красных аккумулятора и жёлтый планшетный зарядник. Проверяй назначение и заряд каждого отдельно.','Two almost identical red batteries and a yellow tablet power bank. Check the purpose and charge of each one.'),
+ z('diagnostics','Диагностический пост','Diagnostics',[47,7,29,44],[],'Монитор и контрольные приборы. Последняя проверка показала: станция устала, но старается.','A monitor and diagnostic instruments. The last check showed that the station is tired but trying.'),
+ z('modules','Правый верстак','Right-hand bench',[60,24,40,55],['blueBattery','memory'],'Здесь лежат синий аккумулятор и съёмная память. Доступ к памяти ЛУЧа откроется только после поручений.','A blue battery and removable memory sit here. LUCH memory becomes accessible after the assignments.')
  ],
  luch:[
  z('desk','Рабочий стол ЛУЧа','LUCH desk',[27,18,41,40],[],'Собственный стол, лампа и улыбающийся монитор. Здесь ЛУЧ выдаёт поручения и терпеливо отвечает на вопросы.','A private desk, lamp and smiling monitor. LUCH gives assignments and patiently answers questions here.'),
@@ -40,12 +36,28 @@
  // regions follow the portrait composition rather than the landscape source.
  const PORTRAIT_BOXES={
   luch:{desk:[21,32,49,27],archive:[0,10,26,52],window:[63,21,34,27],rest:[69,43,31,36]},
-  kitchen:{stove:[0,35,25,26],coffee:[23,37,28,18],shelves:[20,14,52,27],sink:[70,36,30,27],stores:[39,50,50,24]},
-  captain:{navigation:[0,28,58,24],personal:[36,30,39,20],wall:[67,5,33,26],souvenirs:[67,26,33,36],chair:[20,47,60,34]},
-  lab:{plants:[48,11,46,32],samples:[15,25,40,25],bench:[23,40,59,24],terrarium:[76,14,24,30],glassware:[72,36,28,24]},
-  technical:{tools:[0,23,33,34],power:[33,34,34,20],computer:[40,19,29,25],modules:[66,27,34,29],chargers:[42,42,36,19]}
+  kitchen:{stove:[0,35,25,26],coffee:[23,37,28,18],shelves:[20,14,52,27],sink:[62,36,38,30]},
+  captain:{navigation:[0,28,58,24],personal:[36,30,39,20],wall:[50,5,40,26],berth:[67,26,33,42]},
+  lab:{left:[0,29,30,30],shelves:[28,25,33,26],bench:[37,39,26,20],habitat:[59,20,41,40]},
+  technical:{tools:[0,23,33,34],power:[32,32,35,17],diagnostics:[40,17,29,25],modules:[66,27,34,34]}
  };
  const PORTRAIT_SIZES={luch:[852,1846],kitchen:[863,1823],captain:[863,1823],lab:[862,1824],technical:[863,1823]};
+ // Every approach is its own illustration in both orientations. Hotspots are
+ // measured on those illustrations, never inherited from an overview crop.
+ const DETAIL_SIZES={
+  kitchen:{stove:[863,1823],coffee:[863,1822],shelves:[863,1823],sink:[862,1824]},
+  captain:{navigation:[864,1821],personal:[863,1823],wall:[863,1823],berth:[863,1823]},
+  lab:{left:[863,1823],shelves:[863,1823],bench:[863,1823],habitat:[863,1823]},
+  technical:{tools:[863,1823],power:[863,1823],diagnostics:[863,1822],modules:[863,1823]}
+ };
+ const DETAIL_HOTSPOTS={
+  kitchen:{coffee:{coffee:[[41,42,22,24],[42,42,30,16]],thermos:[[16,36,13,26],[10,28,19,27]]},shelves:{mug:[[35,38,18,22],[40,18,23,17]]},sink:{coffeeTin:[[17,42,18,21],[15,40,22,16]],ration:[[36,60,16,14],[23,49,25,15]]}},
+  captain:{navigation:{map:[[27,57,36,17],[34,39,45,18]],compass:[[13,64,17,14],[25,49,18,12]]},personal:{photo:[[53,32,18,23],[43,30,25,15]],logbook:[[29,53,30,18],[20,41,45,17]]},wall:{postcard:[[68,18,19,26],[67,22,26,19]]},berth:{toy:[[63,35,18,25],[46,34,24,18]]}},
+  lab:{shelves:{mossJar:[[57,31,13,23],[56,34,17,17]]},bench:{seeds:[[40,61,19,19],[39,56,27,14]]},habitat:{plant:[[34,36,23,29],[40,34,23,22]],plastic:[[85,12,14,29],[81,22,18,22]],algae:[[54,49,12,20],[61,45,15,17]]}},
+  technical:{tools:{flashlight:[[8,38,12,22],[13,34,17,16]]},power:{battery:[[30,37,17,19],[24,33,25,17]],empty:[[49,37,17,19],[50,33,25,17]],powerbank:[[36,62,26,12],[27,51,48,11]]},modules:{blueBattery:[[34,34,18,23],[32,33,25,19]],memory:[[44,62,16,11],[42,47,23,10]]}}
+ };
+ function detail(room,zone,portrait){const size=DETAIL_SIZES[room]?.[zone];if(!size)return null;return {key:`${room}_${zone}_${portrait?'tall':'wide'}`,size:portrait?size:[1536,1024]};}
+ function hotspot(room,zone,item,portrait){return DETAIL_HOTSPOTS[room]?.[zone]?.[item]?.[portrait?1:0]||null;}
  function frame(vw,vh,iw,ih,box=[0,0,100,100]){const [l,t,w,h]=box,bw=iw*w/100,bh=ih*h/100,scale=Math.min(vw/bw,vh/bh);return {width:bw*scale,height:bh*scale,planeWidth:iw*scale,planeHeight:ih*scale,x:-iw*l/100*scale,y:-ih*t/100*scale,scale};}
  function owner(room,item){return ZONES[room]?.find(z=>z.items.includes(item))?.id||null;}
  function cargo(saved){const count=Math.min(4,saved.filter(id=>id!=='memory').length);return {count,percent:count*25,ready:count===4};}
@@ -61,5 +73,5 @@
   canvas.addEventListener('wheel',wheel,{passive:false});canvas.addEventListener('pointerdown',pointerDown);canvas.addEventListener('pointermove',pointerMove);canvas.addEventListener('pointerup',pointerUp);canvas.addEventListener('pointercancel',pointerUp);
   const observer=new ResizeObserver(update);observer.observe(layout);window.addEventListener('resize',update);window.visualViewport?.addEventListener('resize',update);update();return {zoom:setZoom,getZoom:()=>zoom,destroy(){observer.disconnect();window.removeEventListener('resize',update);window.visualViewport?.removeEventListener('resize',update);canvas.removeEventListener('wheel',wheel);canvas.removeEventListener('pointerdown',pointerDown);canvas.removeEventListener('pointermove',pointerMove);canvas.removeEventListener('pointerup',pointerUp);canvas.removeEventListener('pointercancel',pointerUp);}};
  }
- root.RoomExplore={ZONES,PORTRAIT_BOXES,PORTRAIT_SIZES,frame,owner,cargo,attach};if(typeof module!=='undefined'&&module.exports)module.exports={ZONES,PORTRAIT_BOXES,PORTRAIT_SIZES,frame,owner,cargo};
+ root.RoomExplore={ZONES,PORTRAIT_BOXES,PORTRAIT_SIZES,DETAIL_SIZES,DETAIL_HOTSPOTS,detail,hotspot,frame,owner,cargo,attach};if(typeof module!=='undefined'&&module.exports)module.exports={ZONES,PORTRAIT_BOXES,PORTRAIT_SIZES,DETAIL_SIZES,DETAIL_HOTSPOTS,detail,hotspot,frame,owner,cargo};
 })(typeof window!=='undefined'?window:globalThis);
