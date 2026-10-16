@@ -23,4 +23,9 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .journal-close{position:absolute;right:10px;top:8px;border:1px solid #a6b297;border-radius:50%;background:#e0e6cd;width:36px;height:36px;font-size:24px;line-height:1}
 .journal-tabs{padding-right:36px}
 .battery-sprite{display:block;width:100%;height:100%;overflow:hidden;pointer-events:none;filter:drop-shadow(1px 2px 1px #30251d55)}
+.battery-status{display:inline-block;border:1px solid #a7b49c;border-radius:5px;padding:3px 5px;font-size:11px;line-height:1.25;white-space:nowrap;background:#eee7d5;color:#344d48;pointer-events:none}
+.battery-status.has-power{background:#d0e5c4;color:#28563d}.battery-status.no-power{background:#dddcd4;color:#5a5b55}
+.eng-object>.battery-status{position:absolute;top:100%;left:50%;transform:translateX(-50%);font-size:clamp(7px,1cqw,12px);padding:2px 4px;z-index:1}
+.inventory-card>.battery-status{margin-top:5px;max-width:100%;white-space:normal}.inventory-card>.battery-sprite{width:90px;height:90px}
+.battery-front{width:min(260px,65vw);height:auto;aspect-ratio:1}
 .scene-approach{z-index:3}.knowledge-object:empty{z-index:5}.cupboard-sprite,.clue-sprite{overflow:hidden}

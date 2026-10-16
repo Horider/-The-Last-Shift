@@ -20,9 +20,9 @@
   layers.push('<button class="native-item scene-approach" data-eng="'+n+'" aria-label="'+t(zone?'Прочитать книгу инженера':'Подойти к книге и аккумуляторам',zone?'Read engineer handbook':'Approach handbook and batteries')+'" style="left:'+box[0]+'%;top:'+box[1]+'%;width:'+box[2]+'%;height:'+box[3]+'%"></button>');
  }
 
- function button(label,box,fn,art){const n=commands.push(fn)-1;const [x,y,w,h]=box;const battery=art==='battery-red-table'||art==='battery-blue';layers.push('<button class="'+(art?'eng-object':'native-item')+'" data-eng="'+n+'" aria-label="'+label+'" style="left:'+x+'%;top:'+y+'%;width:'+w+'%;height:'+h+'%">'+(battery?batterySprite(art==='battery-blue'?'blueBattery':'battery',D):art?'<img alt="" src="'+asset(art)+'">':'')+'</button>');}
+ function button(label,box,fn,art,batteryId){const n=commands.push(fn)-1;const [x,y,w,h]=box;const battery=art==='battery-red-table'||art==='battery-blue',status=batteryId?root.ShiftInventory.statusLabel(game,batteryId,t):'',info=batteryId?root.ShiftInventory.batteryInfo(game,batteryId):null;layers.push('<button class="'+(art?'eng-object':'native-item')+'" data-eng="'+n+'" aria-label="'+label+(status?' · '+status:'')+'" style="left:'+x+'%;top:'+y+'%;width:'+w+'%;height:'+h+'%">'+(battery?batterySprite(art==='battery-blue'?'blueBattery':'battery',D):art?'<img alt="" src="'+asset(art)+'">':'')+(status?'<small class="battery-status '+(info.charged?'has-power':'no-power')+'">'+status+'</small>':'')+'</button>');}
  function available(id){const it=game.items.find(i=>i.id===id);return it&&!it.shipped&&!game.inventory?.includes(id)&&game.carry!==id;}
- function item(id,box){if(available(id))button(game.items.find(i=>i.id===id).name,box,()=>zone?inspect(id):approach('center'),sprites[id]);}
+ function item(id,box){if(available(id))button(game.items.find(i=>i.id===id).name,box,()=>zone?inspect(id):approach('center'),sprites[id],id);}
  function crank(){if(turn(s)){game.history.push({event:'vise-turn',turn:s.turns});change();notify(t('Рычаг повернулся.','The handle turned.'));}}
  function take(id){if(game.inventory.length>=6){notify(t('Инвентарь заполнен: 6/6.','Inventory full: 6/6.'));return;}if(collect(s,id)){game.history.push({event:'engineering-collect',item:id});storeItem(id);notify(t('Предмет в инвентаре.','Item stored.'));change();}}
  if(!zone){
@@ -74,6 +74,6 @@
  screen.querySelector('#scene-zoom-out')?.addEventListener('click',()=>view?.zoom(view.getZoom()/1.25));screen.querySelector('#scene-zoom-in')?.addEventListener('click',()=>view?.zoom(view.getZoom()*1.25));
  return {destroy(){view?.destroy();img.onload=null;}};
  }
- root.Engineering={create,collect,turn,assemble,worktop,testerBox,render,sprites};if(typeof module!=='undefined')module.exports=root.Engineering;
+ root.Engineering={create,collect,turn,assemble,worktop,testerBox,batterySprite,render,sprites};if(typeof module!=='undefined')module.exports=root.Engineering;
 })(typeof window!=='undefined'?window:globalThis);
 

@@ -71,7 +71,8 @@
  root.ShiftMobileData['eng_overview-open-wide']='assets/eng-overview-open-wide-v21.png';
  root.ShiftMobileData['eng_overview-open-tall']='assets/eng-overview-open-tall-v21.png';
  root.ShiftMobileData.clueAtlas='assets/clues-v19.png';
- root.ShiftMobileData.cupboardAtlas='assets/cupboard-v19.png';
+ root.ShiftMobileData.kitchen_sink_wide='assets/kitchen-sink-wide-v22.png';
+ root.ShiftMobileData.kitchen_sink_tall='assets/kitchen-sink-tall-v22.png';
  root.ShiftMobileData['eng_overview-clean-wide']='assets/eng-overview-clean-wide-v20.png';
  root.ShiftMobileData['eng_overview-clean-tall']='assets/eng-overview-clean-tall-v20.png';
  root.ShiftMobileData['eng_table-empty-wide']='assets/eng-table-empty-wide-v20.png';
